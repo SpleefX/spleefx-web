@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SpleefX Bin</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: monospace;
+            font-size: 1.0em;
+        }
+
+        #content {
+            width: 100%;
+            height: 100%;
+            padding: .5em;
+            border: 0;
+            margin: 0;
+            resize: none;
+            color: #ececef;
+            background: #30342e;
+        }
+
+        #content:focus {
+            outline: none;
+        }
+
+        #content-wrapper {
+            position: absolute;
+            top: 2em;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        #nav {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 2em;
+            line-height: 2em;
+            text-align: right;
+            vertical-align: middle;
+            background: #212123;
+            color: #59f9d6;
+            white-space: nowrap;
+        }
+
+        #nav .nav-left {
+            float: left;
+        }
+
+        #nav a {
+            display: inline-block;
+            padding: 0 .5em;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        #nav a:hover {
+            background: #666666;
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/1.0.10/pako_deflate.min.js"
+            integrity="sha256-JJTNgfqzhglbcMhb6V4GQycz+CjEugL5QO0FxUCHEUs=" crossorigin="anonymous" defer></script>
+
+    <script type="text/javascript">
+        function submit() {
+            const content = document.getElementById("content").value;
+            if (!content) {
+                return
+            }
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "/paste", true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify({
+                paste: content
+            }));
+            xhr.onreadystatechange = function () { // listen for state changes
+                if (xhr.readyState === 4 && xhr.status === 200) { // when completed we can move away
+                    window.location.href = "/paste/" + JSON.parse(this.response).id;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+<div id="content-wrapper">
+    <label for="content"></label><textarea id="content" spellcheck="false"
+                                           placeholder="Type or paste your content here"></textarea>
+</div>
+<div id="nav">
+    <a class="nav-left" onclick=" submit()">[upload]</a>
+</div>
+</body>
+</html>
