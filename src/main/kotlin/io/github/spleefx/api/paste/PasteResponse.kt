@@ -15,5 +15,8 @@
  */
 package io.github.spleefx.api.paste
 
+/**
+ * The response returned by the API on pastes.
+ */
 @Suppress("unused") // gets deserialized by Spring to return an appropriate response.
 class PasteResponse(val id: String)

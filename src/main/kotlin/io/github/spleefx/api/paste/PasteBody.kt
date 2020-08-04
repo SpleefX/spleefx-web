@@ -15,4 +15,8 @@
  */
 package io.github.spleefx.api.paste
 
+/**
+ * A simple data class representing a paste content. Deserialized by Spring to
+ * fetch response bodies
+ */
 class PasteBody(val paste: String = "")

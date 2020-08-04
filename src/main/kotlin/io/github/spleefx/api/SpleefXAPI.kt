@@ -9,15 +9,24 @@ import org.springframework.scheduling.annotation.EnableAsync
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.ForkJoinPool
 
+/***
+ * Main class for the Spring application
+ */
 @EnableAsync
 @SpringBootApplication
 class SpleefXAPI {
 
+    /**
+     * The task executor pool. This is scanned by Spring
+     */
     @Bean
     fun taskExecutor(): ExecutorService = EXECUTOR
 
     companion object {
 
+        /**
+         * Our own executor pool.
+         */
         @JvmField
         val EXECUTOR = ForkJoinPool()
 

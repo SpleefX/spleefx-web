@@ -28,16 +28,28 @@ import org.springframework.web.bind.annotation.RequestMapping
 import java.net.URI
 import java.util.concurrent.CompletableFuture
 
+/**
+ * Controller for paste endpoints mappings
+ */
 @Controller
 class PasteController {
 
+    /**
+     * The mapper for JSON
+     */
     private val mapper = ObjectMapper()
 
+    /**
+     * Returns the static HTML page for creating a paste
+     */
     @RequestMapping("/paste")
     fun index(): String {
         return "paste.html"
     }
 
+    /**
+     * Creates a paste through the POST request.
+     */
     @Async
     @PostMapping(value = ["/paste"], consumes = ["application/json"], produces = ["application/json"])
     fun createPaste(@RequestBody paste: PasteBody): CompletableFuture<ResponseEntity<String>> {
@@ -51,6 +63,9 @@ class PasteController {
         }
     }
 
+    /**
+     * Views a paste through the GET request.
+     */
     @Async
     @RequestMapping(path = ["/paste/{pasteId}"], produces = ["text/plain"])
     fun viewPaste(@PathVariable pasteId: String): CompletableFuture<ResponseEntity<String>> {

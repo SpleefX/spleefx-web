@@ -22,21 +22,39 @@ import java.io.InputStreamReader
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 
+/**
+ * Controller for responding to version requests
+ */
 @RestController
 class VersionController {
 
+    /**
+     * Views the version list in order.
+     */
     @GetMapping("/api/version", produces = ["application/json"])
-    fun viewPaste(): String {
+    fun versions(): String {
         return LocalVersionReader.versions
     }
 
+    /**
+     * Utility class to read the versions from the embedded file
+     */
     object LocalVersionReader {
 
+        /**
+         * Pool to schedule reading repeatingly and asynchronously
+         */
         private val scheduledExecutorService = Executors.newSingleThreadScheduledExecutor()
 
+        /**
+         * The standardized version response
+         */
         @JvmField
         var versions: String = ""
 
+        /**
+         * Schedules the reading repeating task.
+         */
         @JvmStatic
         fun schedule() {
             scheduledExecutorService.scheduleAtFixedRate({

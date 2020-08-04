@@ -52,6 +52,9 @@ object PasteFactory {
         return future
     }
 
+    /**
+     * Reads the paste with the specified ID
+     */
     fun readPaste(id: String): CompletableFuture<String> {
         val future = CompletableFuture<String>()
         SpleefXAPI.async {
@@ -75,6 +78,9 @@ object PasteFactory {
         return id.toString()
     }
 
+    /**
+     * Thrown as a way to handle invalid pastes
+     */
     class InvalidPasteException(id: String) : Exception(id)
 
 }

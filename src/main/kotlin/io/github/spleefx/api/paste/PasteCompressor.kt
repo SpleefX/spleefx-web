@@ -25,6 +25,9 @@ object PasteCompressor {
         }
     }
 
+    /**
+     * Reads the GZIP text from the specified file
+     */
     fun readGZIP(compressedFile: File): String {
         val buffer = ByteArray(1024)
         return try {
