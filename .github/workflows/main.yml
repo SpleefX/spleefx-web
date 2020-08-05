@@ -44,6 +44,6 @@ jobs:
           # Whether to push the image
           push: true
 
-      - name: Get docker images
+      - name: Build and tag docker images
         run: |
-          docker images
+          docker build --build-arg JAR_FILE=build/libs/*.jar -t reflxction/spleefx-web-api:1.0 .
