@@ -48,6 +48,6 @@ jobs:
       - name: Build and tag docker images
         run: |
           cat ./github-secret.txt | docker login https://docker.pkg.github.com -u ReflxctionDev --password-stdin
-          docker build --build-arg JAR_FILE=build/libs/*.jar -t reflxction/spleefx-web-api:1.0 .
-          docker push reflxction/spleefx-web-api
+          docker build --build-arg JAR_FILE=build/libs/*.jar -t docker.pkg.github.com/spleefx/spleefx-web-api/reflxction/spleefx-web-api:1.0 .
+          docker push docker.pkg.github.com/spleefx/spleefx-web-api/reflxction/spleefx-web-api
           docker images
