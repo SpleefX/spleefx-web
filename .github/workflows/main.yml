@@ -44,7 +44,7 @@ jobs:
 
       - name: Build and tag docker images
         run: |
-          cat ~/github-secret.txt | docker login https://docker.pkg.github.com -u ReflxctionDev --password-stdin
+          cat ./github-secret.txt | docker login https://docker.pkg.github.com -u ReflxctionDev --password-stdin
           docker build -t docker.pkg.github.com/spleefx/spleefx-web-api/reflxction/spleefx-web-api .
           docker push docker.pkg.github.com/spleefx/spleefx-web-api/reflxction/spleefx-web-api
           docker images
