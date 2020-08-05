@@ -22,29 +22,28 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-    # Runs a single command using the runners shell
-    - name: Build JAR
-      run: |
-        chmod +x ./gradlew
-        ./gradlew build
+      # Runs a single command using the runners shell
+      - name: Build JAR
+        run: |
+          chmod +x ./gradlew
+          ./gradlew build
 
-    - name: Build and push Docker images
-      uses: docker/build-push-action@v1.1.0
-      with:
-        # Username used to log in to a Docker registry. If not set then no login will occur
-        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
-        # Server address of Docker registry. If not set then will default to Docker Hub
-        # Docker repository to tag the image with
-        repository: ${{ secrets.GITHUB_TOKEN }}
-        # Always attempt to pull a newer version of the image
-        always_pull: true
-        # Whether to push the image
-        push: true
-#     Runs a set of commands using the runners shell
-#    - name: Run a multi-line script
-#      run: |
-#        echo Add other actions to build,
-#        echo test, and deploy your project.
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v1.1.0
+        with:
+          # Username used to log in to a Docker registry. If not set then no login will occur
+          # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
+          # Server address of Docker registry. If not set then will default to Docker Hub
+          # Docker repository to tag the image with
+          repository: ${{ secrets.GITHUB_TOKEN }}
+          # Always attempt to pull a newer version of the image
+          always_pull: true
+          # Whether to push the image
+          push: true
+
+      - name: Get docker images
+        run: |
+          docker images
