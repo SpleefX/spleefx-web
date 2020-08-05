@@ -47,5 +47,5 @@ jobs:
       - name: Build and tag docker images
         run: |
           docker build -t docker.pkg.github.com/spleefx/spleefx-web-api/reflxction/spleefx-web-api .
-          docker push docker.pkg.github.com/spleefx/spleefx-web-api/reflxction/spleefx-web-api:latest
+          docker push docker.pkg.github.com/spleefx/spleefx-web-api/reflxction/spleefx-web-api
           docker images
