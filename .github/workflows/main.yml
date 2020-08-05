@@ -28,7 +28,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Build JAR
         run: |
-          chmod +x ./gradlew
+    #      chmod +x ./gradlew
           ./gradlew build
 
       - name: Build and push Docker images
