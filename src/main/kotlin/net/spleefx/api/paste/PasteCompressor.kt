@@ -20,6 +20,8 @@ object PasteCompressor {
             println("Destination created: ${destination.createNewFile()}")
             println("Destination exists: ${destination.exists()}")
             println("Abs path: ${destination.absolutePath}")
+            println("Can write: ${destination.canWrite()}")
+            println("Can read: ${destination.canRead()}")
             val written = FileOutputStream(destination)
             val zipped = GZIPOutputStream(written)
             zipped.write(text.toByteArray())
