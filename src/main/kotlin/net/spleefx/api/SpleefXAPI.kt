@@ -36,19 +36,7 @@ class SpleefXAPI {
          * The functioning directory for the API
          */
         @JvmField
-        val DIR = File("./spleefx-web-api/"/*System.getProperty("user.home"), "spleefx-web-api"*/)
-
-        /**
-         * The pastes directory
-         */
-        @JvmField
-        val PASTES = File(DIR, "pastes")
-
-        init {
-            PASTES.mkdirs()
-            println("PASTES exists: ${PASTES.exists()}")
-            println("DIR exists: ${DIR.exists()}")
-        }
+        val DIR = File("/var/lib/data/")
 
         /**
          * Our own executor pool.
