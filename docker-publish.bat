@@ -1,1 +1,0 @@
-docker tag reflxction/spleefx-web-api docker.pkg.github.com/spleefx/spleefx-web-api/reflxction/spleefx-web-api:latest
