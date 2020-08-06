@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 import java.io.BufferedReader
 import java.io.InputStreamReader
-import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 
 /**
@@ -42,11 +41,6 @@ class VersionController {
     object LocalVersionReader {
 
         /**
-         * Pool to schedule reading repeatingly and asynchronously
-         */
-        private val scheduledExecutorService = Executors.newSingleThreadScheduledExecutor()
-
-        /**
          * The standardized version response
          */
         @JvmField
@@ -57,7 +51,7 @@ class VersionController {
          */
         @JvmStatic
         fun schedule() {
-            scheduledExecutorService.scheduleAtFixedRate({
+            SpleefXAPI.scheduleAsync(0, 10, TimeUnit.MINUTES) {
                 synchronized(versions) {
                     val reader = BufferedReader(InputStreamReader(SpleefXAPI::class.java.getResourceAsStream("/versions.json")))
                     var line: String?
@@ -66,7 +60,7 @@ class VersionController {
                         builder.append(line)
                     versions = builder.toString()
                 }
-            }, 0, 10, TimeUnit.MINUTES)
+            }
         }
     }
 }
