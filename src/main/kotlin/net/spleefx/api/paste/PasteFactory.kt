@@ -51,7 +51,7 @@ object PasteFactory {
         val future = CompletableFuture<String>()
         SpleefXAPI.runAsync {
             val id = generatePasteID()
-            val file = File(SpleefXAPI.PASTES, id)
+            val file = File(SpleefXAPI.PASTES, "$id.gzip")
             PasteCompressor.createGZIP(text, file)
             future.complete(id)
         }
