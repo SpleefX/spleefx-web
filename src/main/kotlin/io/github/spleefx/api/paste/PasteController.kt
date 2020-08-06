@@ -17,6 +17,7 @@ package io.github.spleefx.api.paste
 
 import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.databind.ObjectMapper
+import io.github.spleefx.api.SpleefXAPI
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.scheduling.annotation.Async
@@ -35,11 +36,6 @@ import java.util.concurrent.CompletableFuture
 class PasteController {
 
     /**
-     * The mapper for JSON
-     */
-    private val mapper = ObjectMapper()
-
-    /**
      * Returns the static HTML page for creating a paste
      */
     @RequestMapping("/paste")
@@ -55,7 +51,7 @@ class PasteController {
     fun createPaste(@RequestBody paste: PasteBody): CompletableFuture<ResponseEntity<String>> {
         return PasteFactory.createPaste(paste.paste).thenApply { PasteResponse(it) }.thenApply { p ->
             try {
-                return@thenApply ResponseEntity(mapper.writeValueAsString(p), HttpStatus.OK)
+                return@thenApply ResponseEntity(SpleefXAPI.MAPPER.writeValueAsString(p), HttpStatus.OK)
             } catch (e: JsonProcessingException) {
                 e.printStackTrace()
                 throw RuntimeException(e)

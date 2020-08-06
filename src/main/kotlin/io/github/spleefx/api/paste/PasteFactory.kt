@@ -33,7 +33,13 @@ object PasteFactory {
     private val cache: AsyncLoadingCache<String, String> = Caffeine.newBuilder()
             .expireAfterAccess(6, TimeUnit.HOURS)
             .executor(SpleefXAPI.EXECUTOR)
-            .buildAsync(CacheLoader { PasteCompressor.readGZIP(File(it)) })
+            .buildAsync(CacheLoader {
+                try {
+                    PasteCompressor.readGZIP(File(SpleefXAPI.SETTINGS.pasteSaveDirectory, it))
+                } catch (e: InvalidPasteException) {
+                    "Invalid paste: $it"
+                }
+            })
 
     /**
      * Creates a new paste
@@ -43,9 +49,9 @@ object PasteFactory {
      */
     fun createPaste(text: String): CompletableFuture<String> {
         val future = CompletableFuture<String>()
-        SpleefXAPI.async {
+        SpleefXAPI.runAsync {
             val id = generatePasteID()
-            val file = File(id)
+            val file = File(SpleefXAPI.SETTINGS.pasteSaveDirectory, id)
             PasteCompressor.createGZIP(text, file)
             future.complete(id)
         }
@@ -56,15 +62,7 @@ object PasteFactory {
      * Reads the paste with the specified ID
      */
     fun readPaste(id: String): CompletableFuture<String> {
-        val future = CompletableFuture<String>()
-        SpleefXAPI.async {
-            try {
-                future.complete(PasteCompressor.readGZIP(File(id)))
-            } catch (e: InvalidPasteException) {
-                future.complete("Invalid paste: $id")
-            }
-        }
-        return future
+        return cache.get(id)
     }
 
     /**
