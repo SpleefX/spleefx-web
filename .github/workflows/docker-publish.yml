@@ -52,6 +52,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Build JAR
+        run: |
+          chmod +x ./gradlew
+          ./gradlew build
+
       - name: Build image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
