@@ -38,6 +38,10 @@ class SpleefXAPI {
         @JvmField
         val DIR = File("/var/lib/data/")
 
+        init {
+            DIR.mkdirs()
+        }
+
         /**
          * Our own executor pool.
          */
