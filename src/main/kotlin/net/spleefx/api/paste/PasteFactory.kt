@@ -35,7 +35,7 @@ object PasteFactory {
             .executor(SpleefXAPI.EXECUTOR)
             .buildAsync(CacheLoader {
                 try {
-                    PasteCompressor.readGZIP(File(SpleefXAPI.PASTES, it))
+                    PasteCompressor.readGZIP(File(SpleefXAPI.PASTES, "$it.gzip"))
                 } catch (e: InvalidPasteException) {
                     "Invalid paste: $it"
                 }
