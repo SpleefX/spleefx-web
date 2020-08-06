@@ -46,6 +46,8 @@ class SpleefXAPI {
 
         init {
             PASTES.mkdirs()
+            println("PASTES exists: ${PASTES.exists()}")
+            println("DIR exists: ${DIR.exists()}")
         }
 
         /**
