@@ -35,7 +35,7 @@ object PasteFactory {
             .executor(SpleefXAPI.EXECUTOR)
             .buildAsync(CacheLoader {
                 try {
-                    PasteCompressor.readGZIP(File(System.getProperty("user.home"), it))
+                    PasteCompressor.readGZIP(File(System.getProperty("user.dir"), it))
                 } catch (e: InvalidPasteException) {
                     "Invalid paste: $it"
                 }
@@ -51,7 +51,7 @@ object PasteFactory {
         val future = CompletableFuture<String>()
         SpleefXAPI.runAsync {
             val id = generatePasteID()
-            val file = File(System.getProperty("user.home"), id)
+            val file = File(System.getProperty("user.dir"), id)
             PasteCompressor.createGZIP(text, file)
             future.complete(id)
         }
