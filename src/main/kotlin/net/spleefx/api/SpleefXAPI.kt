@@ -36,7 +36,7 @@ class SpleefXAPI {
          * The functioning directory for the API
          */
         @JvmField
-        val DIR = File(System.getProperty("user.home"), "spleefx-web-api")
+        val DIR = File("./spleefx-web-api/"/*System.getProperty("user.home"), "spleefx-web-api"*/)
 
         /**
          * The pastes directory
