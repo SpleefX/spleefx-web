@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.spleefx.api
+package net.spleefx.api.paste
 
-class ConfigSettings {
-
-    val pasteSaveDirectory: String = "/spleefx-web-api/pastes/"
-
-}
+/**
+ * A simple data class representing a paste content. Deserialized by Spring to
+ * fetch response bodies
+ */
+class PasteBody(val paste: String = "")

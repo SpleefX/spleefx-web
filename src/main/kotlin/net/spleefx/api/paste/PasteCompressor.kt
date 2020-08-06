@@ -1,4 +1,4 @@
-package io.github.spleefx.api.paste
+package net.spleefx.api.paste
 
 import java.io.*
 import java.util.zip.GZIPInputStream

@@ -1,9 +1,9 @@
-package io.github.spleefx.api.paste
+package net.spleefx.api.paste
 
 import com.github.benmanes.caffeine.cache.AsyncLoadingCache
 import com.github.benmanes.caffeine.cache.CacheLoader
 import com.github.benmanes.caffeine.cache.Caffeine
-import io.github.spleefx.api.SpleefXAPI
+import net.spleefx.api.SpleefXAPI
 import java.io.File
 import java.security.SecureRandom
 import java.util.*

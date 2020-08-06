@@ -8,7 +8,7 @@ plugins {
     kotlin("plugin.spring") version "1.3.72"
 }
 
-group = "io.github.spleefx"
+group = "net.spleefx"
 version = "1.0-SNAPSHOT"
 
 java.sourceCompatibility = JavaVersion.VERSION_1_8

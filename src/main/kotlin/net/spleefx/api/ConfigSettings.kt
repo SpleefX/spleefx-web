@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.spleefx.api.paste
+package net.spleefx.api
 
-/**
- * The response returned by the API on pastes.
- */
-@Suppress("unused") // gets deserialized by Spring to return an appropriate response.
-class PasteResponse(val id: String)
+class ConfigSettings {
+
+    val pasteSaveDirectory: String = "/spleefx-web-api/pastes/"
+
+}

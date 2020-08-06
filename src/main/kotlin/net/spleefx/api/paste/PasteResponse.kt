@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.spleefx.api.paste
+package net.spleefx.api.paste
 
 /**
- * A simple data class representing a paste content. Deserialized by Spring to
- * fetch response bodies
+ * The response returned by the API on pastes.
  */
-class PasteBody(val paste: String = "")
+@Suppress("unused") // gets deserialized by Spring to return an appropriate response.
+class PasteResponse(val id: String)

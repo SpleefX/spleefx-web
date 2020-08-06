@@ -1,4 +1,4 @@
-package io.github.spleefx.api
+package net.spleefx.api
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import kotlinx.coroutines.GlobalScope
