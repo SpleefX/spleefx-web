@@ -7,8 +7,7 @@ import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.context.annotation.Bean
 import org.springframework.scheduling.annotation.EnableAsync
-import java.io.BufferedReader
-import java.io.InputStreamReader
+import java.io.File
 import java.util.concurrent.*
 
 /***
@@ -33,16 +32,20 @@ class SpleefXAPI {
         @JvmField
         val MAPPER = ObjectMapper()
 
+        /**
+         * The functioning directory for the API
+         */
         @JvmField
-        val SETTINGS: ConfigSettings = MAPPER.readValue(readConfig(), ConfigSettings::class.java)
+        val DIR = File(System.getProperty("user.home"), "spleefx-web-api")
 
-        private fun readConfig(): String {
-            val reader = BufferedReader(InputStreamReader(SpleefXAPI::class.java.getResourceAsStream("/config.json")))
-            var line: String?
-            val builder = StringBuilder()
-            while ((reader.readLine().also { line = it }) != null)
-                builder.append(line)
-            return builder.toString()
+        /**
+         * The pastes directory
+         */
+        @JvmField
+        val PASTES = File(DIR, "pastes")
+
+        init {
+            PASTES.mkdirs()
         }
 
         /**
