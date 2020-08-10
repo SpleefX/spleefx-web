@@ -6,6 +6,6 @@ The web API uses SpringBoot, Kotlin and Gradle.
 
 1. Clone the repository
 ```
-git clone https://github.com/SpleefX/spleefx-web-api.git
+git clone https://github.com/SpleefX/spleefx-web.git
 ```
 2. Run `gradle build` (or `gradlew build` if you do not have Gradle installed) which will produce a fat JAR with all the dependencies
