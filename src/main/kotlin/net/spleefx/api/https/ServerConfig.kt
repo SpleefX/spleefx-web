@@ -13,8 +13,7 @@ import org.springframework.context.annotation.Configuration
 @Configuration
 class ServerConfig {
 
-    @Value("\${server.http.port}")
-    private val httpPort = 0
+    private val httpPort = 443
 
     @Bean
     fun servletContainer(): ServletWebServerFactory {
