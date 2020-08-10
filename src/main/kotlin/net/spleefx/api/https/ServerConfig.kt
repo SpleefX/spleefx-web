@@ -34,7 +34,7 @@ class ServerConfig {
             connector.scheme = "http"
             connector.port = 8080
             connector.secure = false
-            connector.redirectPort = 443
+            connector.redirectPort = 8443
             return connector
         }
 }
