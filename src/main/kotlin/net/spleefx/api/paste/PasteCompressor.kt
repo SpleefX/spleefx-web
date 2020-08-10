@@ -1,8 +1,6 @@
 package net.spleefx.api.paste
 
 import java.io.*
-import java.nio.file.Files
-import java.nio.file.Paths
 import java.util.zip.GZIPInputStream
 import java.util.zip.GZIPOutputStream
 
@@ -16,12 +14,6 @@ object PasteCompressor {
      */
     fun createGZIP(text: String, destination: File) {
         try {
- //           Files.createDirectories()
-            println("Destination created: ${destination.createNewFile()}")
-            println("Destination exists: ${destination.exists()}")
-            println("Abs path: ${destination.absolutePath}")
-            println("Can write: ${destination.canWrite()}")
-            println("Can read: ${destination.canRead()}")
             val written = FileOutputStream(destination)
             val zipped = GZIPOutputStream(written)
             zipped.write(text.toByteArray())

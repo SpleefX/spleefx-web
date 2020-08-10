@@ -15,7 +15,6 @@
  */
 package net.spleefx.api.paste
 
-import com.fasterxml.jackson.core.JsonProcessingException
 import net.spleefx.api.SpleefXAPI
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -49,12 +48,7 @@ class PasteController {
     @PostMapping(value = ["/paste"], consumes = ["application/json"], produces = ["application/json"])
     fun createPaste(@RequestBody paste: PasteBody): CompletableFuture<ResponseEntity<String>> {
         return PasteFactory.createPaste(paste.paste).thenApply { PasteResponse(it) }.thenApply { p ->
-            try {
-                return@thenApply ResponseEntity(SpleefXAPI.MAPPER.writeValueAsString(p), HttpStatus.OK)
-            } catch (e: JsonProcessingException) {
-                e.printStackTrace()
-                throw RuntimeException(e)
-            }
+            return@thenApply ResponseEntity(SpleefXAPI.MAPPER.writeValueAsString(p), HttpStatus.OK)
         }
     }
 
@@ -66,8 +60,10 @@ class PasteController {
     fun viewPaste(@PathVariable pasteId: String): CompletableFuture<ResponseEntity<String>> {
         return if (pasteId.isEmpty() || pasteId.contains("paste")) { // blame spring for not redirecting /paste/ to /paste.
             CompletableFuture.completedFuture(ResponseEntity.status(HttpStatus.FOUND).location(URI.create("/paste")).build())
-        } else {
+        } else try {
             PasteFactory.readPaste(pasteId).thenApply { ResponseEntity(it, HttpStatus.OK) }
+        } catch (e: PasteFactory.InvalidPasteException) {
+            CompletableFuture.completedFuture(ResponseEntity("Invalid paste: " + e.message, HttpStatus.BAD_REQUEST))
         }
     }
 }
