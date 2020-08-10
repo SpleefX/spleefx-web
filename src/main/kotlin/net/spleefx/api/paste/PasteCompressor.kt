@@ -33,7 +33,6 @@ object PasteCompressor {
         return try {
             if (!compressedFile.exists()) throw PasteFactory.InvalidPasteException(compressedFile.name)
             val fileIn = FileInputStream(compressedFile)
-            println(compressedFile.absolutePath)
             val gZIPInputStream = GZIPInputStream(fileIn)
             var beingRead: Int
             val bytes = ByteArrayOutputStream()
