@@ -82,7 +82,7 @@
             }));
             xhr.onreadystatechange = function () { // listen for state changes
                 if (xhr.readyState === 4 && xhr.status === 200) { // when completed we can move away
-                    window.location.href = "/paste/" + JSON.parse(this.response).id;
+                    window.location.replace("/paste/" + JSON.parse(this.response).id);
                 }
             }
         }
