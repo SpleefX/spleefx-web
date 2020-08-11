@@ -16,7 +16,7 @@ function createPaste() {
         // listen for state changes
         if (request.readyState === 4 && request.status === 200) {
             // when completed we can move away
-            window.location.replace("/paste/" + JSON.parse(this.response).id);
+            window.location.href = "/paste/" + JSON.parse(this.response).id
         }
     };
 }

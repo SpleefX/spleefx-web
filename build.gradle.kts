@@ -20,10 +20,6 @@ repositories {
 dependencies {
     implementation("com.github.ben-manes.caffeine", "caffeine", "2.8.5")
     implementation("org.jetbrains.kotlinx", "kotlinx-coroutines-core", "1.3.8")
-/*
-    implementation("org.springframework.security", "spring-security-web", "5.3.4.RELEASE")
-    implementation("org.springframework.security", "spring-security-core", "5.3.4.RELEASE")
-*/
     implementation ("org.springframework.boot:spring-boot-starter-security")
     implementation ("org.springframework.security:spring-security-test")
 

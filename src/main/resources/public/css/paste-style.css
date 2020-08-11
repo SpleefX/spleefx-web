@@ -1,6 +1,5 @@
 * {
-    font-family: 'Raleway';
-    font-size: 1em;
+    font-family: 'Raleway'; /* thank you google fonts, i love you. */
 }
 
 body {
@@ -14,24 +13,23 @@ header {
 }
 
 header #big-header {
-    font-size: 40px;
+    font-size: 50px;
     text-align: center;
 }
 
 header #sub-header {
+    font-size: 20px;
     margin-top: 10px;
     color: white;
     text-align: center;
 }
 
 button {
+    font-size: 20px;
     margin: 5px;
-    /* width: 120px; */
-    /* height: 30px; */
     background-color: #75bdd8;
     border-color: transparent;
     border-radius: 10px;
-    /* background-color: transparent; */
     padding: 5px 10px;
     min-width: 10ch;
     min-height: 44px;
@@ -49,8 +47,8 @@ button:focus {
 }
 
 #pasteBox {
-    margin: 5px;
-    margin-top: 15px;
+    font-size: 20px;
+    margin: 15px 5px;
     resize: none;
     width: 97%;
     height: 99%;
