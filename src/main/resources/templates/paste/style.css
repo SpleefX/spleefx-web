@@ -1,0 +1,83 @@
+* {
+    font-family: 'Raleway';
+    font-size: 1em;
+}
+
+body {
+    background-color: rgb(61, 61, 61);
+}
+
+header {
+    padding: 20px;
+    margin: 0px;
+    color: #75bdd8;
+}
+
+header #big-header {
+    font-size: 40px;
+    text-align: center;
+}
+
+header #sub-header {
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+}
+
+button {
+    margin: 5px;
+    /* width: 120px; */
+    /* height: 30px; */
+    background-color: #75bdd8;
+    border-color: transparent;
+    border-radius: 10px;
+    /* background-color: transparent; */
+    padding: 5px 10px;
+    min-width: 10ch;
+    min-height: 44px;
+    color: rgb(61, 61, 61);
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #1eff00;
+    color: rgb(73, 18, 18);
+}
+
+button:focus {
+    outline: none;
+}
+
+#pasteBox {
+    margin: 5px;
+    margin-top: 15px;
+    resize: none;
+    width: 97%;
+    height: 99%;
+    max-width: 100%;
+    max-height: 100%;
+    border-color: #75bdd8;
+    border-width: 3px;
+    padding: 6px;
+    transition: 0.3s;
+    position: absolute;
+}
+
+#pasteBox::placeholder {
+    color: rgb(61, 61, 61);
+}
+
+#pasteBox:hover {
+    border-color: white;
+}
+
+#pasteBox:focus {
+    outline: none;
+    border-color: white;
+}
+
+.size {
+    float: left;
+    width: 80%;
+    height: 80%;
+}
