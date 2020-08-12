@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.servlet.ModelAndView
 import java.net.URI
 import java.util.concurrent.CompletableFuture
 
@@ -56,8 +57,8 @@ class PasteController {
      * Views a paste through the GET request.
      */
     @Async
-    @RequestMapping(path = ["/paste/{pasteId}"], produces = ["text/plain"])
-    fun viewPaste(@PathVariable pasteId: String): CompletableFuture<ResponseEntity<String>> {
+    @RequestMapping(path = ["/paste/raw/{pasteId}"], produces = ["text/plain"])
+    fun viewRawPaste(@PathVariable pasteId: String): CompletableFuture<ResponseEntity<String>> {
         return if (pasteId.isEmpty() || pasteId.contains("paste")) { // blame spring for not redirecting /paste/ to /paste.
             CompletableFuture.completedFuture(ResponseEntity.status(HttpStatus.FOUND).location(URI.create("/paste")).build())
         } else try {
@@ -66,4 +67,10 @@ class PasteController {
             CompletableFuture.completedFuture(ResponseEntity("Invalid paste: " + e.message, HttpStatus.BAD_REQUEST))
         }
     }
+
+    @RequestMapping(path = ["/paste/{pasteId}"])
+    fun viewPaste(@PathVariable pasteId: String): ModelAndView {
+        return ModelAndView("view-paste.html").addObject("id", pasteId)
+    }
+
 }

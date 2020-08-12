@@ -12,7 +12,29 @@ header {
     color: #75bdd8;
 }
 
-header #big-header {
+.buttons {
+    display: block;
+    text-align: center;
+    margin: 15px;
+}
+
+.buttons #raw:hover {
+    background-color: #ff38fd;
+}
+
+.buttons #copyText:hover {
+    background-color: #ffffff;
+}
+
+.buttons #copyURL:hover {
+    background-color: #b4ff28;
+}
+
+.buttons #createNew:hover {
+    background-color: #ffb300;
+}
+
+header #big-header, #pasteTitle {
     font-size: 50px;
     text-align: center;
 }
@@ -62,7 +84,7 @@ button:focus {
 }
 
 #pasteBox::placeholder {
-    color: rgb(61, 61, 61);
+    color: rgb(147, 147, 147);
 }
 
 #pasteBox:hover {

@@ -16,10 +16,14 @@
 package net.spleefx.api
 
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.servlet.ModelAndView
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.util.concurrent.TimeUnit
+
 
 /**
  * Controller for responding to version requests
@@ -33,6 +37,13 @@ class VersionController {
     @GetMapping("/api/version", produces = ["application/json"])
     fun versions(): String {
         return LocalVersionReader.versions
+    }
+
+    /**
+     * Redirects to spigot as a shortcut URL.
+     */
+    fun redirectToSpigot(): ModelAndView {
+        return ModelAndView("redirect:https://www.spigotmc.org/resources/73093/")
     }
 
     /**
