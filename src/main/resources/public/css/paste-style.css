@@ -81,6 +81,8 @@ button:focus {
     padding: 6px;
     transition: 0.3s;
     position: absolute;
+    background-color: darkslategrey;
+    color: whitesmoke;
 }
 
 #pasteBox::placeholder {

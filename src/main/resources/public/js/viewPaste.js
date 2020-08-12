@@ -31,7 +31,7 @@ $.get({
 });
 
 function viewRaw() {
-    window.location.href = ("/raw/" + pasteID).replace("//", "/")
+    window.location.href = window.location.href.toString().replace("/" + pasteID, "/raw/" + pasteID)
 }
 
 function copyText() {
@@ -56,5 +56,5 @@ function copyURL() {
 }
 
 function createNew() {
-    window.location.href = getPastingURL().replace("//", "/")
+    window.location.href = window.location.href.toString().replace("/" + pasteID, "")
 }
