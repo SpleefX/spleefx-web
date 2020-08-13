@@ -15,17 +15,31 @@
  */
 package net.spleefx.api
 
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestMethod
+import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.servlet.ModelAndView
 
 @RestController
 class RedirectController {
 
-    @RequestMapping(value = ["/spigot"], method = [RequestMethod.GET])
+    @GetMapping(value = ["/discord"])
+    fun discord(): ModelAndView {
+        return createRedirect("https://discord.gg/uwf72ZN")
+    }
+
+    @GetMapping(value = ["/spigot"])
     fun spigot(): ModelAndView {
         return createRedirect("https://www.spigotmc.org/resources/73093/")
+    }
+
+    @GetMapping("/wiki")
+    fun wiki(): ModelAndView {
+        return createRedirect("https://github.com/SpleefX/SpleefX/wiki")
+    }
+
+    @GetMapping("/github")
+    fun gitHub(): ModelAndView {
+        return createRedirect("https://github.com/SpleefX/")
     }
 
     private fun createRedirect(url: String): ModelAndView {

@@ -40,13 +40,6 @@ class VersionController {
     }
 
     /**
-     * Redirects to spigot as a shortcut URL.
-     */
-    fun redirectToSpigot(): ModelAndView {
-        return ModelAndView("redirect:https://www.spigotmc.org/resources/73093/")
-    }
-
-    /**
      * Utility class to read the versions from the embedded file
      */
     object LocalVersionReader {

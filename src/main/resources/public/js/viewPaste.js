@@ -1,8 +1,6 @@
 let pasteID = document.getElementById("pasteTitle").innerHTML.replace("/", ""); // thank you thymeleaf, very cool!
 document.title = "Paste #" + pasteID + " - SpleefX Paste"
 
-console.log(getPastingURL() + "/raw/" + pasteID)
-
 function getPastingURL() {
     return $(location).attr("href").toString().replace("/" + pasteID, "")
 }
