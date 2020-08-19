@@ -15,13 +15,9 @@
  */
 package net.spleefx.api
 
+import net.spleefx.api.util.LocalFile
 import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RestController
-import org.springframework.web.servlet.ModelAndView
-import java.io.BufferedReader
-import java.io.InputStreamReader
 import java.util.concurrent.TimeUnit
 
 
@@ -57,12 +53,7 @@ class VersionController {
         fun schedule() {
             SpleefXAPI.scheduleAsync(0, 10, TimeUnit.MINUTES) {
                 synchronized(versions) {
-                    val reader = BufferedReader(InputStreamReader(SpleefXAPI::class.java.getResourceAsStream("/versions.json")))
-                    var line: String?
-                    val builder = StringBuilder()
-                    while ((reader.readLine().also { line = it }) != null)
-                        builder.append(line)
-                    versions = builder.toString()
+                    versions = LocalFile.read("versions.json")
                 }
             }
         }

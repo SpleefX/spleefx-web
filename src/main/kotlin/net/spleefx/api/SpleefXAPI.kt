@@ -3,6 +3,9 @@ package net.spleefx.api
 import com.fasterxml.jackson.databind.ObjectMapper
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import net.spleefx.api.VersionController.LocalVersionReader
+import net.spleefx.api.stats.GameStatsFactory
+import net.spleefx.api.util.IncrementingID
 import org.apache.catalina.Context
 import org.apache.catalina.connector.Connector
 import org.apache.tomcat.util.descriptor.web.SecurityCollection
@@ -92,7 +95,9 @@ class SpleefXAPI {
         @JvmStatic
         fun main(args: Array<String>) {
             SpringApplication.run(SpleefXAPI::class.java, *args)
-            VersionController.LocalVersionReader.schedule()
+            LocalVersionReader.schedule()
+            IncrementingID.schedule()
+            GameStatsFactory.schedule()
         }
 
         /**
@@ -108,6 +113,19 @@ class SpleefXAPI {
                     t.printStackTrace()
                 }
             }
+        }
+
+        inline fun <R> supplyAsync(crossinline task: () -> R): CompletableFuture<R> {
+            val future = CompletableFuture<R>()
+            GlobalScope.launch {
+                try {
+                    future.complete(task())
+                } catch (t: Throwable) {
+                    t.printStackTrace()
+                    future.obtrudeException(t)
+                }
+            }
+            return future
         }
 
         /**

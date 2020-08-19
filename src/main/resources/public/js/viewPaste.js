@@ -13,20 +13,14 @@ function beautify(text) {
     }
 }
 
-$.get({
-    url: getPastingURL() + "/raw/" + pasteID,
-    data: {},
-    success: function (response) {
-        document.getElementById("pasteBox").style.fontFamily = "monospace"
-        document.getElementById("pasteBox").innerHTML = beautify(response.toString())
-        if (response.toString() === ("Invalid paste: " + pasteID)) {
-            document.getElementById("raw").outerHTML = ""
-            document.getElementById("copyText").outerHTML = ""
-            document.getElementById("copyURL").outerHTML = ""
-        }
-    },
-    dataType: 'text'
-});
+const response = document.getElementById("cont").innerHTML
+document.getElementById("pasteBox").style.fontFamily = "monospace"
+document.getElementById("pasteBox").innerHTML = beautify(response.toString())
+if (response.toString() === ("Invalid paste: " + pasteID)) {
+    document.getElementById("raw").outerHTML = ""
+    document.getElementById("copyText").outerHTML = ""
+    document.getElementById("copyURL").outerHTML = ""
+}
 
 function viewRaw() {
     window.location.href = window.location.href.toString().replace("/" + pasteID, "/raw/" + pasteID)

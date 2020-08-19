@@ -16,6 +16,8 @@
 package net.spleefx.api.paste
 
 import net.spleefx.api.SpleefXAPI
+import net.spleefx.api.ratelimit.RateLimit
+import net.spleefx.api.ratelimit.RequestsLimit
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.scheduling.annotation.Async
@@ -26,13 +28,18 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.servlet.ModelAndView
 import java.net.URI
+import java.time.Duration
 import java.util.concurrent.CompletableFuture
+import javax.servlet.http.HttpServletRequest
 
 /**
  * Controller for paste endpoints mappings
  */
 @Controller
 class PasteController {
+
+    // 5 requests per minute per IP
+    private val ratelimit = RequestsLimit { RateLimit(capacity = 5, every = Duration.ofMinutes(1)) }
 
     /**
      * Returns the static HTML page for creating a paste
@@ -47,9 +54,11 @@ class PasteController {
      */
     @Async
     @PostMapping(value = ["/paste"], consumes = ["application/json"], produces = ["application/json"])
-    fun createPaste(@RequestBody paste: PasteBody): CompletableFuture<ResponseEntity<String>> {
-        return PasteFactory.createPaste(paste.paste).thenApply { PasteResponse(it) }.thenApply { p ->
-            return@thenApply ResponseEntity(SpleefXAPI.MAPPER.writeValueAsString(p), HttpStatus.OK)
+    fun createPaste(@RequestBody paste: PasteBody, servlet: HttpServletRequest): CompletableFuture<ResponseEntity<String>> {
+        return ratelimit.consume(1, servlet) {
+            PasteFactory.createPaste(paste.paste).thenApply { PasteResponse(it) }.thenApply { p ->
+                return@thenApply ResponseEntity(SpleefXAPI.MAPPER.writeValueAsString(p), HttpStatus.OK)
+            }
         }
     }
 
@@ -68,9 +77,11 @@ class PasteController {
         }
     }
 
+    @Async
     @RequestMapping(path = ["/paste/{pasteId}"])
-    fun viewPaste(@PathVariable pasteId: String): ModelAndView {
-        return ModelAndView("view-paste.html").addObject("id", pasteId)
+    fun viewPaste(@PathVariable pasteId: String): CompletableFuture<ModelAndView> {
+        return PasteFactory.readPaste(pasteId).thenApply {
+            ModelAndView("view-paste.html").addObject("id", pasteId).addObject("cont", it)
+        }
     }
-
 }
