@@ -15,20 +15,32 @@ java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
     mavenCentral()
+    maven { url = uri("https://jitpack.io") }
 }
 
 dependencies {
-    implementation("com.github.ben-manes.caffeine", "caffeine", "2.8.5")
+    implementation("org.jetbrains.kotlin", "kotlin-reflect")
+    implementation("org.jetbrains.kotlin", "kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlinx", "kotlinx-coroutines-core", "1.3.8")
-    implementation ("org.springframework.boot:spring-boot-starter-security")
-    implementation ("org.springframework.security:spring-security-test")
 
+    implementation("com.github.ben-manes.caffeine", "caffeine", "2.8.5")
+
+    implementation("com.github.moltenjson", "lightweight-moltenjson", "2.5.3-SNAPSHOT") {
+        exclude(group = "com.google.code.gson", module = "gson")
+    }
+
+    implementation("com.google.code.gson", "gson", "2.8.5")
+    implementation("com.github.vladimir-bukhtoyarov", "bucket4j-core", "4.10.0")
+
+    implementation("io.lettuce", "lettuce-core", "6.0.0.M1")
+
+    implementation("org.springframework.boot", "spring-boot-starter-security")
+    implementation("org.springframework.security", "spring-security-test")
     implementation("org.springframework.boot", "spring-boot-starter-thymeleaf")
     implementation("org.springframework.boot", "spring-boot-starter-web")
     implementation("org.springframework.boot", "spring-boot-starter-actuator")
     implementation("org.springframework.boot", "spring-boot-starter")
-    implementation("org.jetbrains.kotlin", "kotlin-reflect")
-    implementation("org.jetbrains.kotlin", "kotlin-stdlib-jdk8")
+
     testImplementation("org.springframework.boot", "spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
