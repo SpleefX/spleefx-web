@@ -16,6 +16,7 @@ java.sourceCompatibility = JavaVersion.VERSION_1_8
 repositories {
     mavenCentral()
     maven { url = uri("https://jitpack.io") }
+    maven { url = uri("https://dl.bintray.com/kotlin/kotlin-dev/") }
 }
 
 dependencies {
