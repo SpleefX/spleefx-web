@@ -19,6 +19,7 @@
 		<!-- The page header -->
 		<header>
 			<div th:text="${id}" id="pasteTitle"><strong>[[${id}]]</strong></div>
+			<div th:text="${cont}" class="readable" id="cont"><strong>[[${cont}]]</strong></div>
 			<div class="buttons">
 				
 				<button id="raw" onclick="viewRaw()">
