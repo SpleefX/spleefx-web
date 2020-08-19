@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>[[${pageTitle}]] - SpleefX Docs</title>
+		<link
+				href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&display=swap"
+				rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+		<div th:text="${pageContent}" id="pageContent" class="markdown"></div>
+		<script>
+			let el = document.querySelectorAll(".markdown");
+			
+			for (let i = 0; i < el.length; i++) {
+				el[i].innerHTML = marked(el[i].innerHTML.replace(/&gt;+/g, '>').replace(/&lt;+/g, "<"), {sanitize: true});
+			}
+		</script>
+		<link th:rel="stylesheet" th:href="@{/css/markdown.css}">
+	</body>
+</html>
