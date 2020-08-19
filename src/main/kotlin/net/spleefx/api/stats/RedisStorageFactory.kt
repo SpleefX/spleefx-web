@@ -12,7 +12,7 @@ class RedisStorageFactory {
     /**
      * The internal Redis client
      */
-    private val redisClient = RedisClient.create("redis://localhost/2").connect()
+    private val redisClient = RedisClient.create("redis://0.0.0.0/2").connect()
 
     /**
      * Updates the specified key -> value asynchronously
