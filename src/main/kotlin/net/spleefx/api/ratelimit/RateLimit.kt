@@ -25,7 +25,6 @@ import java.time.Duration
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.TimeUnit
 
-
 /**
  * A simple ratelimiter that implements the token bucket strategy.
  *

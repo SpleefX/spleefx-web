@@ -4,8 +4,8 @@ plugins {
     id("org.springframework.boot") version "2.3.2.RELEASE"
     id("io.spring.dependency-management") version "1.0.9.RELEASE"
     id("com.github.johnrengelman.shadow") version "4.0.4"
-    kotlin("jvm") version "1.3.72"
-    kotlin("plugin.spring") version "1.3.72"
+    kotlin("jvm") version "1.4.0"
+    kotlin("plugin.spring") version "1.4.0"
 }
 
 group = "net.spleefx"
@@ -19,9 +19,9 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin", "kotlin-reflect")
-    implementation("org.jetbrains.kotlin", "kotlin-stdlib-jdk8")
-    implementation("org.jetbrains.kotlinx", "kotlinx-coroutines-core", "1.3.8")
+    implementation("org.jetbrains.kotlin", "kotlin-reflect", "1.4")
+    implementation("org.jetbrains.kotlin", "kotlin-stdlib-jdk8", "1.4")
+    implementation("org.jetbrains.kotlinx", "kotlinx-coroutines-core", "1.3.9")
 
     implementation("com.github.ben-manes.caffeine", "caffeine", "2.8.5")
 

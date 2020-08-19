@@ -3,6 +3,8 @@ package net.spleefx.api
 import com.fasterxml.jackson.databind.ObjectMapper
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import net.moltenjson.configuration.direct.DirectConfiguration
+import net.moltenjson.json.JsonFile
 import net.spleefx.api.VersionController.LocalVersionReader
 import net.spleefx.api.stats.GameStatsFactory
 import net.spleefx.api.util.IncrementingID
@@ -72,6 +74,12 @@ class SpleefXAPI {
          */
         @JvmField
         val DIR = File("/var/lib/data/")
+
+        /**
+         * The config file
+         */
+        @JvmField
+        val CONFIG: DirectConfiguration = DirectConfiguration.of(JsonFile.of(DIR, "config.json"))
 
         init {
             DIR.mkdirs()
