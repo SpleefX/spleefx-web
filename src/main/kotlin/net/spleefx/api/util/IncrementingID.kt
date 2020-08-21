@@ -18,7 +18,8 @@ class IncrementingID(private val context: String) {
         }
 
     companion object {
-        private val config: DirectConfiguration = DirectConfiguration.of(JsonFile.of(SpleefXAPI.DIR, "ids.json"))
+        @JvmField
+        val config: DirectConfiguration = DirectConfiguration.of(JsonFile.of(SpleefXAPI.DIR, "ids.json"))
         fun schedule() = SpleefXAPI.scheduleAsync(1, 1, TimeUnit.HOURS) {
             config.save(Throwable::printStackTrace)
         }

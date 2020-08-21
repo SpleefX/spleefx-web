@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.*
 import org.springframework.web.servlet.ModelAndView
 import java.time.Duration
 import java.util.concurrent.CompletableFuture
-import javax.annotation.PreDestroy
 import javax.servlet.http.HttpServletRequest
 
 @RestController
@@ -50,8 +49,4 @@ class StatsController {
                 ModelAndView("stats.html").addObject("id", gameId).addObject("payload", it)
         }
     }
-
-    @PreDestroy
-    fun save() = GameStatsFactory.save()
-
 }
