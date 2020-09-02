@@ -4,7 +4,7 @@ const sheet = document.styleSheets[0];
 const rules = sheet.cssRules || sheet.rules;
 
 rules[1].style.backgroundImage = "url('" + json.bg + "')";
-document.title = "Game #" + document.getElementById("id").innerHTML + " @ " + json.svr
+
 function getVictoryState(token) {
     switch (token) {
         case "$WIN":
@@ -66,3 +66,5 @@ function addRow(rowData) {
 for (let index in json.rows) {
     addRow(json.rows[index]);
 }
+
+document.title = "Game #" + document.getElementById("gameID").innerHTML + " @ " + json.svr
