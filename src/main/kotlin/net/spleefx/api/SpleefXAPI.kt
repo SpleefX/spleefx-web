@@ -5,7 +5,6 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import net.moltenjson.configuration.direct.DirectConfiguration
 import net.moltenjson.json.JsonFile
-import net.spleefx.api.VersionController.LocalVersionReader
 import net.spleefx.api.util.IncrementingID
 import org.apache.catalina.Context
 import org.apache.catalina.connector.Connector
@@ -102,7 +101,6 @@ class SpleefXAPI {
         @JvmStatic
         fun main(args: Array<String>) {
             SpringApplication.run(SpleefXAPI::class.java, *args)
-            LocalVersionReader.schedule()
             IncrementingID.schedule()
         }
 

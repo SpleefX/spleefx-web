@@ -32,30 +32,7 @@ class VersionController {
      */
     @GetMapping("/api/version", produces = ["application/json"])
     fun versions(): String {
-        return LocalVersionReader.versions
+        return SpleefXAPI.CONFIG.getString("versions")
     }
 
-    /**
-     * Utility class to read the versions from the embedded file
-     */
-    object LocalVersionReader {
-
-        /**
-         * The standardized version response
-         */
-        @JvmField
-        var versions: String = ""
-
-        /**
-         * Schedules the reading repeating task.
-         */
-        @JvmStatic
-        fun schedule() {
-            SpleefXAPI.scheduleAsync(0, 10, TimeUnit.MINUTES) {
-                synchronized(versions) {
-                    versions = LocalFile.read("versions.json")
-                }
-            }
-        }
-    }
 }
