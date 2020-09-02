@@ -1,4 +1,4 @@
-package net.spleefx.api.https
+package net.spleefx.api.security
 
 import org.springframework.context.annotation.Bean
 import org.springframework.security.config.annotation.web.builders.HttpSecurity

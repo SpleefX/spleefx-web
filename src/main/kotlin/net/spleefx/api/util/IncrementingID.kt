@@ -26,7 +26,7 @@ class IncrementingID(private val context: String) {
     }
 }
 
-private fun DirectConfiguration.getInt(identifier: String, def: Int): Int {
+fun DirectConfiguration.getInt(identifier: String, def: Int): Int {
     val j = content.get(identifier) ?: return def
     return j.asInt
 }

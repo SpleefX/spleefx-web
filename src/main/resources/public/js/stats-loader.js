@@ -1,11 +1,16 @@
 const json = JSON.parse(document.getElementById("payload").innerHTML)
 
+const sheet = document.styleSheets[0];
+const rules = sheet.cssRules || sheet.rules;
+
+rules[1].style.backgroundImage = "url('" + json.bg + "')";
+document.title = "Game #" + document.getElementById("id").innerHTML + " @ " + json.svr
 function getVictoryState(token) {
     switch (token) {
         case "$WIN":
             return {html: "VICTORY", color: "rgb(0, 200, 0)"}
         case "$LOSS":
-            return {html: "ELIMINATED", color: "rgb(206,38,38)"}
+            return {html: "ELIMINATED", color: "rgb(200, 10, 10)"}
         case "$CARRY":
             return {html: "CARRIED", color: "rgb(255,141,2)"}
         default:
@@ -14,7 +19,21 @@ function getVictoryState(token) {
 }
 
 document.getElementById("modename").innerHTML = json.modeName;
+document.getElementById("game-summary").innerHTML = json.ip
+
 createHeader(json.header);
+
+function addValue(name, value, color = "") {
+    const summary = document.getElementById("game-summary")
+    if (summary.innerText)
+        summary.innerHTML += "<br/>"
+    const span = document.createElement("span")
+    span.className = "value"
+    span.innerHTML = value
+    if (color)
+        span.style.color = color
+    summary.innerHTML += name + ": " + span.outerHTML + "<br/>"
+}
 
 function createHeader(header) {
     const table = document.getElementById("table");

@@ -34,19 +34,24 @@ class StatsController {
     @Async
     @PostMapping("/stats")
     fun createStatsPage(@RequestBody payload: String, servlet: HttpServletRequest): CompletableFuture<ResponseEntity<String>> {
-        return rateLimit.consume(1, servlet) {
-            CompletableFuture.completedFuture(ResponseEntity.ok(GameStatsFactory.createGame(payload).toString()))
+        return rateLimit.consume(requestIP = servlet) {
+            GameStats.addGame(payload).thenApply { ResponseEntity.ok(it) }
         }
     }
 
     @Async
     @GetMapping("/stats/{gameId}")
     fun displayStatsPage(@PathVariable gameId: String): CompletableFuture<ModelAndView> {
-        return GameStatsFactory.readGame(gameId.toInt()).thenApply {
-            if (it == null)
-                ModelAndView("errors/404.html")
-            else
-                ModelAndView("stats.html").addObject("id", gameId).addObject("payload", it)
-        }
+        return GameStats.getGame(gameId.toInt()).thenApply {
+            try {
+                if (it == null)
+                    ModelAndView("errors/404.html")
+                else
+                    ModelAndView("stats.html").addObject("id", gameId).addObject("payload", it)
+            } catch (e: Throwable) {
+                e.printStackTrace()
+                ModelAndView("errors/500.html")
+            }
+        }.toCompletableFuture()
     }
 }

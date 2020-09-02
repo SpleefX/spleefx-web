@@ -13,7 +13,7 @@ class RedisStorageFactory {
     /**
      * The internal Redis client
      */
-    private val redisClient = RedisClient.create("redis://" + SpleefXAPI.CONFIG.getString("redisIP") + "/2").connect()
+    val redisClient = RedisClient.create("redis://" + SpleefXAPI.CONFIG.getString("redisIP") + "/2").connect()
 
     /**
      * Updates the specified key -> value asynchronously

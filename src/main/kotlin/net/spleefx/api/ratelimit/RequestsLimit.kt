@@ -26,10 +26,10 @@ class RequestsLimit(private val createRateLimit: () -> RateLimit) {
 
     fun <R> consume(
             tokens: Long = 1,
-            requestServlet: HttpServletRequest,
+            requestIP: HttpServletRequest,
             block: () -> CompletableFuture<ResponseEntity<R>>
     ): CompletableFuture<ResponseEntity<R>> {
-        return getLimit(requestServlet).consume(tokens, block)
+        return getLimit(requestIP).consume(tokens, block)
     }
 
     private fun getLimit(requestServlet: HttpServletRequest): RateLimit {
