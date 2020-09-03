@@ -1,5 +1,5 @@
 const json = JSON.parse(document.getElementById("payload").innerHTML)
-
+const id = document.getElementById("gameID").innerHTML
 const sheet = document.styleSheets[0];
 const rules = sheet.cssRules || sheet.rules;
 
@@ -67,4 +67,7 @@ for (let index in json.rows) {
     addRow(json.rows[index]);
 }
 
-document.title = "Game #" + document.getElementById("gameID").innerHTML + " @ " + json.svr
+document.title = "Game #" + id + " @ " + json.svr
+document.getElementById("og_url").innerHTML = "https://spleefx.net/stats?game=" + id
+document.getElementById("og_title").innerHTML = "Game stats | " + json.svr + " | SpleefX Stats"
+document.getElementById("og_desc").innerHTML = "View game statistics of game #" + id + " at " + json.ip + "."

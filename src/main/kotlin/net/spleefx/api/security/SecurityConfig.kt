@@ -14,6 +14,7 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
 
     override fun configure(http: HttpSecurity) {
         http.cors().and().csrf().disable().requiresChannel().anyRequest().requiresSecure()
+                .and().authorizeRequests().antMatchers("/favicon.ico").permitAll()
     }
 
     @Bean
