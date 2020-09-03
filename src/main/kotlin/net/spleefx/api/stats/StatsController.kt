@@ -32,7 +32,7 @@ class StatsController {
     private val rateLimit: RequestsLimit = RequestsLimit { RateLimit(5, Duration.ofMinutes(1)) }
 
     @Async
-    @PostMapping("/stats")
+    @PostMapping("/addstats")
     fun createStatsPage(@RequestBody payload: String, servlet: HttpServletRequest): CompletableFuture<ResponseEntity<String>> {
         return rateLimit.consume(requestIP = servlet) {
             GameStats.addGame(payload).thenApply { ResponseEntity.ok(it) }
@@ -40,8 +40,8 @@ class StatsController {
     }
 
     @Async
-    @GetMapping("/stats/{gameId}")
-    fun displayStatsPage(@PathVariable gameId: String): CompletableFuture<ModelAndView> {
+    @GetMapping("/stats")
+    fun displayStatsPage(@RequestParam("game") gameId: String): CompletableFuture<ModelAndView> {
         return GameStats.getGame(gameId.toInt()).thenApply {
             try {
                 if (it == null)
