@@ -1,9 +1,9 @@
-This page will cover how to control extensions using commands. [Don't know what an extension is?](https://github.com/SpleefX/SpleefX/wiki/Understand-extensions)
+This page will cover how to control extensions using commands. [Don't know what an extension is?](Understand-extensions)
 
 > **Page Index**:
-> 1. [Load an extension](https://github.com/SpleefX/SpleefX/wiki/Extension-commands#load-an-extension)
-> 2. [Reload an extension](https://github.com/SpleefX/SpleefX/wiki/Extension-commands#reload-an-extension)
-> 3. [Enable/Disable an extension](https://github.com/SpleefX/SpleefX/wiki/Extension-commands#enabledisable-an-extension)
+> 1. [Load an extension](Extension-commands#load-an-extension)
+> 2. [Reload an extension](Extension-commands#reload-an-extension)
+> 3. [Enable/Disable an extension](Extension-commands#enabledisable-an-extension)
 ---
 
 # Load an extension

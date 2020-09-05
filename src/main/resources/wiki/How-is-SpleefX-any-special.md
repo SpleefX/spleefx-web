@@ -1,4 +1,4 @@
-**This page focuses on the "small things that do big differences". If you are looking for a straightforward feature list, take a [detour here](https://github.com/SpleefX/SpleefX/wiki/Feature-list)**.
+**This page focuses on the "small things that do big differences". If you are looking for a straightforward feature list, take a [detour here](Feature-list)**.
 
 # For admins
 * **GUI Driven**: Due to the fact that most people find in-game GUIs to be flexible, interactive and simple, the plugin breaks down many of the complicated parts into simple GUI menus which anyone, even with zero experience, could easily deal with.

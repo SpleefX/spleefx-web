@@ -1,10 +1,10 @@
 This page will cover details on how to completely customize the double-jumps system in extensions
 
 >**Page Index**:
-> 1. [What are double jumps?](https://github.com/SpleefX/SpleefX/wiki/Double-Jumps#what-are-double-jumps)
-> 2. [Components](https://github.com/SpleefX/SpleefX/wiki/Double-Jumps#components)
-> 3. [Items](https://github.com/SpleefX/SpleefX/wiki/Double-Jumps#items)
-> 4. [Scoreboards](https://github.com/SpleefX/SpleefX/wiki/Double-Jumps#scoreboards)
+> 1. [What are double jumps?](Double-Jumps#what-are-double-jumps)
+> 2. [Components](Double-Jumps#components)
+> 3. [Items](Double-Jumps#items)
+> 4. [Scoreboards](Double-Jumps#scoreboards)
 ---
 
 # What are double jumps?
@@ -20,7 +20,7 @@ Each player will have a specific amount of double jumps in each game, with a coo
 | cooldownBetween | The cooldown between double jumps |
 | playSoundOnJump | A sound to play when the player double jumps. Can be `null`. |
 | doubleJumpItems | Items which double-jump the player when they left/right click on them. See `Items` below. |
-| launchVelocity | The velocity which controls how the player is launched. See [Understand vectors](https://github.com/SpleefX/SpleefX/wiki/Understand-vectors#Useful-resources) for more information. |
+| launchVelocity | The velocity which controls how the player is launched. See [Understand vectors](Understand-vectors#Useful-resources) for more information. |
 
 # Items
 Represents items which, if available, double jump the player when they right/left click with them.
@@ -30,7 +30,7 @@ Represents items which, if available, double jump the player when they right/lef
  1. **onAvailable**: This item takes the slot when the player can double-jump
  2. **onUnavailable**: This item takes the slot when the player cannot double jump, either because of running out of double jumps, or because they must wait for the cooldown.
 
-For information on items format, see the [Special formats -> Items](https://github.com/SpleefX/SpleefX/wiki/Understand-extensions#items) section.
+For information on items format, see the [Special formats -> Items](Understand-extensions#items) section.
 
 | Component key | Description |
 |--|--|

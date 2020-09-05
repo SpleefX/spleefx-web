@@ -1,10 +1,10 @@
 This page contains each command with its corresponding permission.
 
 > **Page index:**
-> 1. [Admin commands](https://github.com/SpleefX/SpleefX/wiki/Commands-&-Permissions#admin-commands)
-> 2. [Arena commands](https://github.com/SpleefX/SpleefX/wiki/Commands-&-Permissions#arena-commands)
-> 3. [Game commands](https://github.com/SpleefX/SpleefX/wiki/Commands-&-Permissions#game-commands)
-> 4. [Others](https://github.com/SpleefX/SpleefX/wiki/Commands-&-Permissions#others)
+> 1. [Admin commands](Commands-&-Permissions#admin-commands)
+> 2. [Arena commands](Commands-&-Permissions#arena-commands)
+> 3. [Game commands](Commands-&-Permissions#game-commands)
+> 4. [Others](Commands-&-Permissions#others)
 --- 
 #### **Bracketology**
  - Text in **angled brackets <>** means the parameter is required
@@ -43,11 +43,11 @@ This page contains each command with its corresponding permission.
 |--|--|--|--|--|
 | listarenas | List all arenas for a specific mode | listarenas | spleefx.<mode>.listarenas | true |
 | join | Join a specific or random arena | join [arena] |spleefx.<mode>.join  | true |
-| joingui | Display the [join GUI](https://github.com/SpleefX/SpleefX/wiki/Join-GUI) | joingui | spleefx.<mode>.joingui | true |
+| joingui | Display the [join GUI](Join-GUI) | joingui | spleefx.<mode>.joingui | true |
 | leave | Leave your current arena | leave | spleefx.<mode>.leave | true |
 
 # Others
 | Command | Description | Usage | Permission | Default |
 |--|--|--|--|--|
 | help | Get a list of all available commands, or help for a specific command | /<mode> help [sub-command] | spleefx.<mode>.help | true |
-| stats | Display the [statistics GUI](https://github.com/SpleefX/SpleefX/wiki/Statistics-GUI) for yourself/another player | stats [player] \[(global)] | **Self**: spleefx.<mode>.stats **Other**: spleefx.<mode>.stats.others | **Self**: true **Other**: false |
+| stats | Display the [statistics GUI](Statistics-GUI) for yourself/another player | stats [player] \[(global)] | **Self**: spleefx.<mode>.stats **Other**: spleefx.<mode>.stats.others | **Self**: true **Other**: false |

@@ -1,7 +1,7 @@
 > **Page Index**:
-> 1. [Prerequisites](https://github.com/SpleefX/SpleefX/wiki/Installation-and-basic-setup#prerequisites)
-> 2. [Installation](https://github.com/SpleefX/SpleefX/wiki/Installation-and-basic-setup#installation)
-> 3. [Plugin files](https://github.com/SpleefX/SpleefX/wiki/Installation-and-basic-setup#plugin-files)
+> 1. [Prerequisites](Installation-and-basic-setup#prerequisites)
+> 2. [Installation](Installation-and-basic-setup#installation)
+> 3. [Plugin files](Installation-and-basic-setup#plugin-files)
 ---
 
 # Prerequisites:

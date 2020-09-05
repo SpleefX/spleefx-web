@@ -1,13 +1,13 @@
 This page will include information on troubleshooting the plugin, dealing with common errors and understanding messages presented by the plugin itself.
 
 > **Page Index**:
-> 1. [No enum constant org.bukkit.Sound.BLOCK_LEVER_CLICK](https://github.com/SpleefX/SpleefX/wiki/Troubleshooting#no-enum-constant-orgbukkitsoundblock_lever_click)
-> 2. [java.lang.BootstrapMethodError: java.lang.NoSuchMethodError: org/bukkit/scheduler/BukkitTask.isCancelled()Z](https://github.com/SpleefX/SpleefX/wiki/Troubleshooting#javalangbootstrapmethoderror-javalangnosuchmethoderror-orgbukkitschedulerbukkittaskiscancelledz)
-> 3. ["No sign definition in arena XXX"](https://github.com/SpleefX/SpleefX/wiki/Troubleshooting#no-sign-definition-in-arena-xxx)
-> 4. ["Failed to load arena XXX: ..."](https://github.com/SpleefX/SpleefX/wiki/Troubleshooting#failed-to-load-arena-xxx-)
-> 5. ["Failed to register arena type" (multiple causes)](https://github.com/SpleefX/SpleefX/wiki/Troubleshooting#failed-to-register-arena-type-multiple-causes)
-> 6. ["Unsupported server protocol (1.X)"](https://github.com/SpleefX/SpleefX/wiki/Troubleshooting#unsupported-server-protocol-1x)
-> 7. [Material cannot be null / No enum constant org.bukkit.Material.XXX](https://github.com/SpleefX/SpleefX/wiki/Troubleshooting#material-cannot-be-null--no-enum-constant-orgbukkitmaterialxxx)
+> 1. [No enum constant org.bukkit.Sound.BLOCK_LEVER_CLICK](Troubleshooting#no-enum-constant-orgbukkitsoundblock_lever_click)
+> 2. [java.lang.BootstrapMethodError: java.lang.NoSuchMethodError: org/bukkit/scheduler/BukkitTask.isCancelled()Z](Troubleshooting#javalangbootstrapmethoderror-javalangnosuchmethoderror-orgbukkitschedulerbukkittaskiscancelledz)
+> 3. ["No sign definition in arena XXX"](Troubleshooting#no-sign-definition-in-arena-xxx)
+> 4. ["Failed to load arena XXX: ..."](Troubleshooting#failed-to-load-arena-xxx-)
+> 5. ["Failed to register arena type" (multiple causes)](Troubleshooting#failed-to-register-arena-type-multiple-causes)
+> 6. ["Unsupported server protocol (1.X)"](Troubleshooting#unsupported-server-protocol-1x)
+> 7. [Material cannot be null / No enum constant org.bukkit.Material.XXX](Troubleshooting#material-cannot-be-null--no-enum-constant-orgbukkitmaterialxxx)
 
 ## No enum constant org.bukkit.Sound.BLOCK_LEVER_CLICK
 Assuming you are using 1.8-1.8.8, this error appears when the plugin attempts to load the following value from the `config.yml`:

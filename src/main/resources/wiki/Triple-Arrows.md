@@ -1,9 +1,9 @@
 This page will cover how to configure and use the triple arrows ability in bow spleef.
 
 > **Page Index**:
-> 1. [Components](https://github.com/SpleefX/SpleefX/wiki/Triple-Arrows#components)
-> 2. [Scoreboards](https://github.com/SpleefX/SpleefX/wiki/Triple-Arrows#scoreboards)
-> 3. [Issues](https://github.com/SpleefX/SpleefX/wiki/Triple-Arrows#issues)
+> 1. [Components](Triple-Arrows#components)
+> 2. [Scoreboards](Triple-Arrows#scoreboards)
+> 3. [Issues](Triple-Arrows#issues)
 ---
 
 # Components

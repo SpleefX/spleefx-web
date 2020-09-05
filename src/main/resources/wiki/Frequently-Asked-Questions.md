@@ -3,21 +3,21 @@ This page compiles many of the questions which have been repeatedly asked by the
 
 ---
 > **Page index**:
-> * [What versions and platforms does the plugin support?](https://github.com/SpleefX/SpleefX/wiki/Frequently-Asked-Questions#what-versions-and-platforms-does-the-plugin-support)
-> * [How can I prevent players from getting out of an arena?](https://github.com/SpleefX/SpleefX/wiki/Frequently-Asked-Questions#how-can-i-prevent-players-from-getting-out-of-an-arena)
-> * [How can I stop players from breaking out of an arena?](https://github.com/SpleefX/SpleefX/wiki/Frequently-Asked-Questions#how-can-i-stop-players-from-breaking-out-of-an-arena)
-> * [How can I reward winners?](https://github.com/SpleefX/SpleefX/wiki/Frequently-Asked-Questions#how-can-i-reward-winners)
-> * [How can I change the items and potion effects player get upon start?](https://github.com/SpleefX/SpleefX/wiki/Frequently-Asked-Questions#how-can-i-change-the-items-and-potion-effects-player-get-upon-start)
-> * [How can I create a join sign?](https://github.com/SpleefX/SpleefX/wiki/Frequently-Asked-Questions#how-can-i-create-a-join-sign)
-> * [Can I have arena floors built of different materials, and not necessarily snow only?](https://github.com/SpleefX/SpleefX/wiki/Frequently-Asked-Questions#can-i-have-arena-floors-built-of-different-materials-and-not-necessarily-snow-only)
-> * [Can I build cylindrical/spherical/non-cuboid arenas?](https://github.com/SpleefX/SpleefX/wiki/Frequently-Asked-Questions#can-i-build-cylindricalsphericalnon-cuboid-arenas)
-> * [How can I remove/change the www.example.com in scoreboards?](https://github.com/SpleefX/SpleefX/wiki/Frequently-Asked-Questions#how-can-i-removechange-the-wwwexamplecom-in-scoreboards)
+> * [What versions and platforms does the plugin support?](Frequently-Asked-Questions#what-versions-and-platforms-does-the-plugin-support)
+> * [How can I prevent players from getting out of an arena?](Frequently-Asked-Questions#how-can-i-prevent-players-from-getting-out-of-an-arena)
+> * [How can I stop players from breaking out of an arena?](Frequently-Asked-Questions#how-can-i-stop-players-from-breaking-out-of-an-arena)
+> * [How can I reward winners?](Frequently-Asked-Questions#how-can-i-reward-winners)
+> * [How can I change the items and potion effects player get upon start?](Frequently-Asked-Questions#how-can-i-change-the-items-and-potion-effects-player-get-upon-start)
+> * [How can I create a join sign?](Frequently-Asked-Questions#how-can-i-create-a-join-sign)
+> * [Can I have arena floors built of different materials, and not necessarily snow only?](Frequently-Asked-Questions#can-i-have-arena-floors-built-of-different-materials-and-not-necessarily-snow-only)
+> * [Can I build cylindrical/spherical/non-cuboid arenas?](Frequently-Asked-Questions#can-i-build-cylindricalsphericalnon-cuboid-arenas)
+> * [How can I remove/change the www.example.com in scoreboards?](Frequently-Asked-Questions#how-can-i-removechange-the-wwwexamplecom-in-scoreboards)
 > 
-> * [Does SpleefX have a bungee-mode?](https://github.com/SpleefX/SpleefX/wiki/Frequently-Asked-Questions#does-spleefx-have-a-bungee-mode)
-> * [How can I disable delay in splegg shots?](https://github.com/SpleefX/SpleefX/wiki/Frequently-Asked-Questions#how-can-i-disable-delay-in-splegg-shots)
-> * [When large arenas start or regenerate, the server freezes and TPS drops. Any solutions?](https://github.com/SpleefX/SpleefX/wiki/Frequently-Asked-Questions#when-large-arenas-start-or-regenerate-the-server-freezes-and-tps-drops-any-solutions)
-> * [How can I edit the building of an arena after it was made and saved?](https://github.com/SpleefX/SpleefX/wiki/Frequently-Asked-Questions#how-can-i-edit-the-building-of-an-arena-after-it-was-made-and-saved)
-> * [Any unanswered questions?](https://github.com/SpleefX/SpleefX/wiki/Frequently-Asked-Questions#any-unanswered-questions)
+> * [Does SpleefX have a bungee-mode?](Frequently-Asked-Questions#does-spleefx-have-a-bungee-mode)
+> * [How can I disable delay in splegg shots?](Frequently-Asked-Questions#how-can-i-disable-delay-in-splegg-shots)
+> * [When large arenas start or regenerate, the server freezes and TPS drops. Any solutions?](Frequently-Asked-Questions#when-large-arenas-start-or-regenerate-the-server-freezes-and-tps-drops-any-solutions)
+> * [How can I edit the building of an arena after it was made and saved?](Frequently-Asked-Questions#how-can-i-edit-the-building-of-an-arena-after-it-was-made-and-saved)
+> * [Any unanswered questions?](Frequently-Asked-Questions#any-unanswered-questions)
 
 ---
 ## What versions and platforms does the plugin support
@@ -43,12 +43,12 @@ You can also do the opposite, have all blocks breakable by default and `deny-blo
 You can define certain blocks as `nonDestroyableBlocks`. The configuration is done inside `/SpleefX/extensions/standard/splegg.json`
 
 ## How can I reward winners?
-Moved to [Rewards](https://github.com/SpleefX/SpleefX/wiki/Rewards).
+Moved to [Rewards](Rewards).
 
 ## How can I change the items and potion effects players get upon start?
 1. Head to **/SpleefX/extensions/<mode type>/<mode>.json**
 2. Go to the `itemsToAdd` section
-3. Add and remove [items](https://github.com/SpleefX/SpleefX/wiki/Understand-extensions#items).
+3. Add and remove [items](Understand-extensions#items).
 
 ## How can I create a join sign?
 1. Place a sign
@@ -86,7 +86,7 @@ By default, splegg comes with an upgrades system. You can configure delays in **
 2. If the server freezes **when an arena starts or regenerates**, then [download FastAsyncWorldEdit](https://intellectualsites.github.io/download/fawe.html). It is faster and generally better for server performance than the standard WorldEdit. SpleefX supports both.
 
 ## How can I edit the building of an arena after it was made and saved?
-See [Edit arena structure](https://github.com/SpleefX/SpleefX/wiki/Edit-arena-structure).
+See [Edit arena structure](Edit-arena-structure).
 
 # Any unanswered questions?
 Join us on [Discord](https://discord.gg/uwf72ZN) for live and fast support!

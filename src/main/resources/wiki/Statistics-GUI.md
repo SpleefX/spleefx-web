@@ -1,9 +1,9 @@
 > **Page Index**:
-> 1. [What is the statistics GUI?](https://github.com/SpleefX/SpleefX/wiki/Statistics-GUI#what-is-the-statistics-gui)
-> 2. [Display the statistics GUI](https://github.com/SpleefX/SpleefX/wiki/Statistics-GUI#display-the-statistics-gui)
-> 3. [Customize the statistics GUI](https://github.com/SpleefX/SpleefX/wiki/Statistics-GUI#customize-the-statistics-gui)
-> 4. [Placeholders](https://github.com/SpleefX/SpleefX/wiki/Statistics-GUI#placeholders)
-> 5. [Reload the statistics GUI](https://github.com/SpleefX/SpleefX/wiki/Statistics-GUI#reload-the-statistics-gui)
+> 1. [What is the statistics GUI?](Statistics-GUI#what-is-the-statistics-gui)
+> 2. [Display the statistics GUI](Statistics-GUI#display-the-statistics-gui)
+> 3. [Customize the statistics GUI](Statistics-GUI#customize-the-statistics-gui)
+> 4. [Placeholders](Statistics-GUI#placeholders)
+> 5. [Reload the statistics GUI](Statistics-GUI#reload-the-statistics-gui)
 ---
 
 # What is the statistics GUI
@@ -43,7 +43,7 @@ The statistics GUI settings can be customized through `/plugins/SpleefX/gui/stat
 |--|--|
 | title | The title of the inventory. Can accept **`{player}`** as a placeholder for the player's name, and **`{extension}`** as a placeholder for the extension's display name |
 | rows | The amount of rows this menu has |
-| items | The GUI items. See [this](https://github.com/SpleefX/SpleefX/wiki/Understand-extensions#items) to understand the format |
+| items | The GUI items. See [this](Understand-extensions#items) to understand the format |
 
 # Placeholders
 

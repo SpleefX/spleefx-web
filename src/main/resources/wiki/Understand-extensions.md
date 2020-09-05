@@ -1,15 +1,15 @@
 
 >**Page Index**:
-> 1. [What are extensions?](https://github.com/SpleefX/SpleefX/wiki/Understand-extensions#what-are-extensions)
-> 2. [What can I configure?](https://github.com/SpleefX/SpleefX/wiki/Understand-extensions#what-can-i-configure)
-> 3. [Extension types](https://github.com/SpleefX/SpleefX/wiki/Understand-extensions#extension-types)
-> 4. [Special formats](https://github.com/SpleefX/SpleefX/wiki/Understand-extensions#special-formats)
->    * [Potion effects](https://github.com/SpleefX/SpleefX/wiki/Understand-extensions#potion-effects)
->    * [Items](https://github.com/SpleefX/SpleefX/wiki/Understand-extensions#items)
->    * [Enchantments](https://github.com/SpleefX/SpleefX/wiki/Understand-extensions#enchantments)
->    * [Game titles](https://github.com/SpleefX/SpleefX/wiki/Understand-extensions#game-titles)
->    * [Game-modes](https://github.com/SpleefX/SpleefX/wiki/Understand-extensions#game-modes)
->    * [Cancelled damage](https://github.com/SpleefX/SpleefX/wiki/Understand-extensions#cancelled-damage)
+> 1. [What are extensions?](Understand-extensions#what-are-extensions)
+> 2. [What can I configure?](Understand-extensions#what-can-i-configure)
+> 3. [Extension types](Understand-extensions#extension-types)
+> 4. [Special formats](Understand-extensions#special-formats)
+>    * [Potion effects](Understand-extensions#potion-effects)
+>    * [Items](Understand-extensions#items)
+>    * [Enchantments](Understand-extensions#enchantments)
+>    * [Game titles](Understand-extensions#game-titles)
+>    * [Game-modes](Understand-extensions#game-modes)
+>    * [Cancelled damage](Understand-extensions#cancelled-damage)
 ---
 
 # What are extensions?

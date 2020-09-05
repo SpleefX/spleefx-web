@@ -39,6 +39,7 @@ object LocalFile {
             builder.toString()
         } catch (e: Throwable) {
             e.printStackTrace()
+            println("No such file: $name")
             "404.html"
         }
     }

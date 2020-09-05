@@ -1,9 +1,9 @@
 
 >**Page Index**:
-> 1. [Definition](https://github.com/SpleefX/SpleefX/wiki/What-is-an-arena%3F#definition)
-> 2. [Components](https://github.com/SpleefX/SpleefX/wiki/What-is-an-arena%3F#components)
-> 3. [Arena storage](https://github.com/SpleefX/SpleefX/wiki/What-is-an-arena%3F#arena-storage)
-> 4. [Arena placeholders](https://github.com/SpleefX/SpleefX/wiki/What-is-an-arena%3F#arena-placeholders)
+> 1. [Definition](What-is-an-arena%3F#definition)
+> 2. [Components](What-is-an-arena%3F#components)
+> 3. [Arena storage](What-is-an-arena%3F#arena-storage)
+> 4. [Arena placeholders](What-is-an-arena%3F#arena-placeholders)
 ---
 # Definition
 **Arena (əˈrēnə)** *(noun)*: A level area surrounded by seats for spectators, in which sports, entertainments, and other public events are held.

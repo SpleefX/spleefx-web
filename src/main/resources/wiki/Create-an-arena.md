@@ -1,9 +1,9 @@
 
-This page will cover how to create an arena. [Don't know what an arena is?](https://github.com/SpleefX/SpleefX/wiki/What-is-an-arena%3F)
+This page will cover how to create an arena. [Don't know what an arena is?](What-is-an-arena%3F)
 
 >**Page Index**:
-> 1. [Prerequisites](https://github.com/SpleefX/SpleefX/wiki/Create-an-arena#prerequisites)
-> 2. [Create your arena](https://github.com/SpleefX/SpleefX/wiki/Create-an-arena#create-your-arena)
+> 1. [Prerequisites](Create-an-arena#prerequisites)
+> 2. [Create your arena](Create-an-arena#create-your-arena)
 ---
 
 # Prerequisites

@@ -1,8 +1,8 @@
-This page will cover how to create an extension. [Don't know what an extension is?](https://github.com/SpleefX/SpleefX/wiki/Understand-extensions)
+This page will cover how to create an extension. [Don't know what an extension is?](Understand-extensions)
 
 >**Page Index**:
-> 1. [Prerequisites](https://github.com/SpleefX/SpleefX/wiki/Create-your-very-own-extension#prerequisites)
-> 2. [Add your extension](https://github.com/SpleefX/SpleefX/wiki/Create-your-very-own-extension#add-your-extension)
+> 1. [Prerequisites](Create-your-very-own-extension#prerequisites)
+> 2. [Add your extension](Create-your-very-own-extension#add-your-extension)
 ---
 
 # Prerequisites

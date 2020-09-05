@@ -1,8 +1,8 @@
 This page will cover the plugin's use of Bukkit vectors. **This is not a physics class!** It will include information on how to appropriately use them.
 
 > **Page Index**:
-> 1. [Format](https://github.com/SpleefX/SpleefX/wiki/Understand-vectors#format)
-> 2. [Useful resources](https://github.com/SpleefX/SpleefX/wiki/Understand-vectors#Useful-resources)
+> 1. [Format](Understand-vectors#format)
+> 2. [Useful resources](Understand-vectors#Useful-resources)
 ---
 
 # Format

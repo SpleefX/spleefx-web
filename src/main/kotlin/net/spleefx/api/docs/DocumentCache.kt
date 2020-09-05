@@ -10,6 +10,9 @@ import java.util.concurrent.TimeUnit
 
 object DocumentCache {
 
+    var SIDEBAR: String = ""
+    var FOOTER: String = ""
+
     private val cache: AsyncLoadingCache<String, String> = Caffeine.newBuilder()
             .executor(SpleefXAPI.EXECUTOR)
             .expireAfterAccess(6, TimeUnit.HOURS)
@@ -19,6 +22,8 @@ object DocumentCache {
             })
 
     fun readPage(name: String): CompletableFuture<String> {
+        cache.get("_Sidebar").thenAccept { SIDEBAR = it }
+        cache.get("_Footer").thenAccept { FOOTER = it }
         return cache.get(name.replace(' ', '-'))
     }
 }

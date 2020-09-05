@@ -26,16 +26,27 @@ import java.util.concurrent.CompletableFuture
 class DocsController {
 
     @Async
-    @GetMapping("/docs/{name}")
+    @GetMapping("/wiki/{name}")
     fun getDocumentRaw(@PathVariable name: String): CompletableFuture<ModelAndView> {
+        if (name.startsWith("_")) // pages that start with _ aren't actual pages. don't expose those :D
+            return CompletableFuture.completedFuture(ModelAndView("errors/404.html"))
         return DocumentCache.readPage(name).thenApply {
             if (it == "404.html") return@thenApply ModelAndView("errors/404.html")
             try {
-                ModelAndView("doc-template.html")
+                ModelAndView("wiki-template.html")
                         .addObject("pageTitle", name.replace('-', ' ')).addObject("pageContent", it)
+                        .addObject("sidebar", DocumentCache.SIDEBAR)
+                        .addObject("footer", DocumentCache.FOOTER)
             } catch (t: Throwable) {
                 ModelAndView("errors/404.html")
             }
         }
     }
+
+    @Async
+    @GetMapping("/wiki_sidebar")
+    fun getSidebarRaw(): CompletableFuture<String> {
+        return DocumentCache.readPage("_Sidebar")
+    }
+
 }

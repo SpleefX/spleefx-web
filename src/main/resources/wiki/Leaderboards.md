@@ -1,8 +1,8 @@
 > **Page Index**:
-> 1. [Prerequisites](https://github.com/SpleefX/SpleefX/wiki/Leaderboards#prerequisites)
-> 2. [Enable the leaderboards](https://github.com/SpleefX/SpleefX/wiki/Leaderboards#enable-the-leaderboards)
-> 3. [Access leaderboards](https://github.com/SpleefX/SpleefX/wiki/Leaderboards#access-leaderboards)
-> 4. [Customize the format](https://github.com/SpleefX/SpleefX/wiki/Leaderboards#customize-the-format)
+> 1. [Prerequisites](Leaderboards#prerequisites)
+> 2. [Enable the leaderboards](Leaderboards#enable-the-leaderboards)
+> 3. [Access leaderboards](Leaderboards#access-leaderboards)
+> 4. [Customize the format](Leaderboards#customize-the-format)
 ---
 This page will include information on how to create access the leaderboards features of SpleefX
 

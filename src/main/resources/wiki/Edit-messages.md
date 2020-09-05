@@ -19,7 +19,7 @@ There are 2 ways to edit plugin messages:
 | {arena_playercount} | The amount of players in this arena |
 | {arena_alive} | The amount of players alive in this arena |
 | {arena_maximum} | The maximum amount of players in this arena |
-| {arena_stage} | The arena's stage. See [arena components](https://github.com/SpleefX/SpleefX/wiki/What-is-an-arena?#components). |
+| {arena_stage} | The arena's stage. See [arena components](What-is-an-arena?#components). |
 | {arena_time_left} | The arena time left. If the arena is not active, it will be the arena's time |
 
 ### Team

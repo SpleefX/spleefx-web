@@ -2,11 +2,11 @@
 
 >
 > **Page Index**:
-> 1. [What is SpleefX-SQL](https://github.com/SpleefX/SpleefX/wiki/SpleefX-SQL#what-is-spleefx-sql)
-> 2. [When to use SpleefX-SQL](https://github.com/SpleefX/SpleefX/wiki/SpleefX-SQL#when-to-use-spleefx-sql)
-> 3. [Get SpleefX-SQL](https://github.com/SpleefX/SpleefX/wiki/SpleefX-SQL#get-spleefx-sql)
-> 4. [Why two separate files](https://github.com/SpleefX/SpleefX/wiki/SpleefX-SQL#why-two-separate-files)
-> 5. [Contribute to SpleefX-SQL](https://github.com/SpleefX/SpleefX/wiki/SpleefX-SQL#contribute-to-spleefx-sql)
+> 1. [What is SpleefX-SQL](SpleefX-SQL#what-is-spleefx-sql)
+> 2. [When to use SpleefX-SQL](SpleefX-SQL#when-to-use-spleefx-sql)
+> 3. [Get SpleefX-SQL](SpleefX-SQL#get-spleefx-sql)
+> 4. [Why two separate files](SpleefX-SQL#why-two-separate-files)
+> 5. [Contribute to SpleefX-SQL](SpleefX-SQL#contribute-to-spleefx-sql)
 ---
 
 # What is SpleefX-SQL

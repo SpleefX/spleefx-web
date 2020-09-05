@@ -1,12 +1,12 @@
 
 
-**SpleefX Wiki**: https://github.com/SpleefX/SpleefX/wiki/
+**SpleefX Wiki**: 
 
 **SpleefX Discord**: https://discord.gg/yrNy9Qt
 
-**SpleefX-PAPI for PlaceholderAPI**: https://github.com/SpleefX/SpleefX/wiki/SpleefX-PAPI
+**SpleefX-PAPI for PlaceholderAPI**: SpleefX-PAPI
 
-**SpleefX-SQL for SQLite**: https://github.com/SpleefX/SpleefX/wiki/SpleefX-SQL
+**SpleefX-SQL for SQLite**: SpleefX-SQL
 
 ### General features
  1. Create as many arenas as you want

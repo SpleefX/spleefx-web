@@ -15,6 +15,8 @@
  */
 package net.spleefx.api
 
+import com.google.gson.reflect.TypeToken
+import net.moltenjson.utils.ReflectiveTypes
 import net.spleefx.api.util.LocalFile
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
@@ -31,8 +33,8 @@ class VersionController {
      * Views the version list in order.
      */
     @GetMapping("/api/version", produces = ["application/json"])
-    fun versions(): String {
-        return SpleefXAPI.CONFIG.getString("versions")
+    fun versions(): List<String> {
+        return SpleefXAPI.CONFIG.get("versions", ReflectiveTypes.LIST_STRING_TYPE)
     }
 
 }

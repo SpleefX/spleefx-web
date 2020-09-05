@@ -1,14 +1,14 @@
 This page will contain tips alongside with advised additional plugins in order to help make the best use out of SpleefX.
 
 > **Page Index**:
-> 1. [Server configuration](https://github.com/SpleefX/SpleefX/wiki/Make-the-most-out-of-SpleefX#server-configuration)
-> 2. [FastAsyncWorldEdit](https://github.com/SpleefX/SpleefX/wiki/Make-the-most-out-of-SpleefX#fastasyncworldedit)
-> 3. [WorldGuard](https://github.com/SpleefX/SpleefX/wiki/Make-the-most-out-of-SpleefX#worldguard)
-> 4. [WorldGuard - Extra Flags](https://github.com/SpleefX/SpleefX/wiki/Make-the-most-out-of-SpleefX#worldguard---extraflags)
-> 5. [Command aliasing plugins](https://github.com/SpleefX/SpleefX/wiki/Make-the-most-out-of-SpleefX#command-aliasing-plugins)
-> 6. [Citizens + CommandNPC](https://github.com/SpleefX/SpleefX/wiki/Make-the-most-out-of-SpleefX#citizens--commandnpc)
-> 7. [LuckPerms](https://github.com/SpleefX/SpleefX/wiki/Make-the-most-out-of-SpleefX#luckperms)
-> 8. [Placeholder API](https://github.com/SpleefX/SpleefX/wiki/Make-the-most-out-of-SpleefX#placeholder-api)
+> 1. [Server configuration](Make-the-most-out-of-SpleefX#server-configuration)
+> 2. [FastAsyncWorldEdit](Make-the-most-out-of-SpleefX#fastasyncworldedit)
+> 3. [WorldGuard](Make-the-most-out-of-SpleefX#worldguard)
+> 4. [WorldGuard - Extra Flags](Make-the-most-out-of-SpleefX#worldguard---extraflags)
+> 5. [Command aliasing plugins](Make-the-most-out-of-SpleefX#command-aliasing-plugins)
+> 6. [Citizens + CommandNPC](Make-the-most-out-of-SpleefX#citizens--commandnpc)
+> 7. [LuckPerms](Make-the-most-out-of-SpleefX#luckperms)
+> 8. [Placeholder API](Make-the-most-out-of-SpleefX#placeholder-api)
 ---
 # Server configuration
 
@@ -62,4 +62,4 @@ Such useful permissions are:
 # Placeholder API
 Placeholder API provides a united platform to access data from other plugins. Through the [SpleefX-PAPI](https://github.com/SpleefX/SpleefX-PAPI) expansion, it is possible to access player statistics through SpleefX and display them on other elements such as scoreboards.
 
-See [this page](https://github.com/SpleefX/SpleefX/wiki/SpleefX-PAPI) for more information about integrating with PlaceholderAPI.
+See [this page](SpleefX-PAPI) for more information about integrating with PlaceholderAPI.

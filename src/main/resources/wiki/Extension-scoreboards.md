@@ -3,8 +3,8 @@ This page will cover details on how to completely customize the scoreboard in ex
 **Note**: The scoreboard feature is still in beta! Bugs may occur.
 
 > **Page Index**:
-> 1. [Components](https://github.com/SpleefX/SpleefX/wiki/Extension-scoreboards#components)
-> 2. [Placeholders](https://github.com/SpleefX/SpleefX/wiki/Extension-scoreboards#placeholders)
+> 1. [Components](Extension-scoreboards#components)
+> 2. [Placeholders](Extension-scoreboards#placeholders)
 ---
 # Components
 | Component key | Description
@@ -18,4 +18,4 @@ A scoreboard can accept the following placeholders:
 * **`{double_jumps}`**: The amount of double-jumps the player has
 * **`{triple_arrows}`**: The triple arrows ability count the player can use **(Bow spleef only!)**
 * **Any PlaceholderAPI placeholders**
-* [**Message placeholders**](https://github.com/SpleefX/SpleefX/wiki/Edit-messages#message-placeholders)
+* [**Message placeholders**](Edit-messages#message-placeholders)

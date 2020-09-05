@@ -1,9 +1,9 @@
 > **Page Index**:
-> 1. [What is SpleefX-PAPI](https://github.com/SpleefX/SpleefX/wiki/SpleefX-PAPI#what-is-spleefx-papi)
-> 2. [Prerequisites](https://github.com/SpleefX/SpleefX/wiki/SpleefX-PAPI#prerequisites)
-> 3. [Get SpleefX-PAPI](https://github.com/SpleefX/SpleefX/wiki/SpleefX-PAPI#get-spleefx-papi)
+> 1. [What is SpleefX-PAPI](SpleefX-PAPI#what-is-spleefx-papi)
+> 2. [Prerequisites](SpleefX-PAPI#prerequisites)
+> 3. [Get SpleefX-PAPI](SpleefX-PAPI#get-spleefx-papi)
 > 4. [List of SpleefX placeholders
-](https://github.com/SpleefX/SpleefX/wiki/SpleefX-PAPI#list-of-spleefx-placeholders)
+](SpleefX-PAPI#list-of-spleefx-placeholders)
 ---
 
 # What is SpleefX-PAPI?

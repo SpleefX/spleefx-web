@@ -1,19 +1,19 @@
 
 This page will cover how to setup an already-made arena. 
-* [Don't know what an arena is?](https://github.com/SpleefX/SpleefX/wiki/What-is-an-arena%3F)
-* [Don't know how to create an arena?](https://github.com/SpleefX/SpleefX/wiki/Create-an-arena)
+* [Don't know what an arena is?](What-is-an-arena%3F)
+* [Don't know how to create an arena?](Create-an-arena)
 
 >**Page Index**:
-> 1. [Set the arena variables](https://github.com/SpleefX/SpleefX/wiki/Setup-your-arena#set-the-arena-variables)
-> 2. [Add teams](https://github.com/SpleefX/SpleefX/wiki/Setup-your-arena#add-teams)
-> 3. [Set spawn-points](https://github.com/SpleefX/SpleefX/wiki/Setup-your-arena#set-spawn-points)
-> 4. [Set the arena lobby](https://github.com/SpleefX/SpleefX/wiki/Setup-your-arena#set-the-arena-lobby)
-> 5. [Extras](https://github.com/SpleefX/SpleefX/wiki/Setup-your-arena#extras)
->    * [Enable/Disable your arena](https://github.com/SpleefX/SpleefX/wiki/Setup-your-arena#enabledisable-your-arena)
->    * [Rename your arena](https://github.com/SpleefX/SpleefX/wiki/Setup-your-arena#rename-your-arena)
->    * [Update arena variables through commands](https://github.com/SpleefX/SpleefX/wiki/Setup-your-arena#update-arena-variables-through-commands)
->    * [Regenerate an arena manually](https://github.com/SpleefX/SpleefX/wiki/Setup-your-arena#regenerate-an-arena-manually)
->    * [List all arenas for a specific mode](https://github.com/SpleefX/SpleefX/wiki/Setup-your-arena#list-all-arenas-for-a-specific-mode)
+> 1. [Set the arena variables](Setup-your-arena#set-the-arena-variables)
+> 2. [Add teams](Setup-your-arena#add-teams)
+> 3. [Set spawn-points](Setup-your-arena#set-spawn-points)
+> 4. [Set the arena lobby](Setup-your-arena#set-the-arena-lobby)
+> 5. [Extras](Setup-your-arena#extras)
+>    * [Enable/Disable your arena](Setup-your-arena#enabledisable-your-arena)
+>    * [Rename your arena](Setup-your-arena#rename-your-arena)
+>    * [Update arena variables through commands](Setup-your-arena#update-arena-variables-through-commands)
+>    * [Regenerate an arena manually](Setup-your-arena#regenerate-an-arena-manually)
+>    * [List all arenas for a specific mode](Setup-your-arena#list-all-arenas-for-a-specific-mode)
 ---
 
 # Set the arena variables

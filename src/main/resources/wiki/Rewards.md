@@ -1,9 +1,9 @@
 This page will contain all details on how to reward winners in arenas.
 
 > **Page Index**:
-> 1. [Notes](https://github.com/SpleefX/SpleefX/wiki/Rewards#notes)
-> 2. [Add rewards](https://github.com/SpleefX/SpleefX/wiki/Rewards#add-rewards)
-> 3. [Examples](https://github.com/SpleefX/SpleefX/wiki/Rewards#examples)
+> 1. [Notes](Rewards#notes)
+> 2. [Add rewards](Rewards#add-rewards)
+> 3. [Examples](Rewards#examples)
 ---
 
 # Notes
