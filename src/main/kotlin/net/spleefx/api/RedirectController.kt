@@ -36,7 +36,7 @@ class RedirectController {
 
     @GetMapping("/wiki")
     fun wiki(): ModelAndView {
-        return createRedirect("https://github.com/SpleefX/SpleefX/wiki")
+        return createRedirect("https://spleefx.net/wiki/Home")
     }
 
     @GetMapping("/github")
