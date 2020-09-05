@@ -18,7 +18,7 @@ object DocumentCache {
             .expireAfterAccess(6, TimeUnit.HOURS)
             .expireAfterWrite(6, TimeUnit.HOURS)
             .buildAsync(CacheLoader {
-                LocalFile.read("docs/$it.md")
+                LocalFile.read("wiki/$it.md")
             })
 
     fun readPage(name: String): CompletableFuture<String> {
