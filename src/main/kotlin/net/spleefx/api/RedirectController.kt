@@ -15,10 +15,12 @@
  */
 package net.spleefx.api
 
+import net.spleefx.api.docs.DocumentCache
+import org.springframework.scheduling.annotation.Async
 import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.servlet.ModelAndView
+import java.util.concurrent.CompletableFuture
 
 
 @RestController
@@ -34,9 +36,17 @@ class RedirectController {
         return createRedirect("https://www.spigotmc.org/resources/73093/")
     }
 
+    @Async
     @GetMapping("/wiki")
-    fun wiki(): ModelAndView {
-        return createRedirect("https://spleefx.net/wiki/Home")
+    fun wiki(): CompletableFuture<ModelAndView> {
+        return DocumentCache.readPage("Home")
+                .thenApply {
+                    ModelAndView("wiki-template.html")
+                            .addObject("pageTitle", "Home")
+                            .addObject("pageContent", it)
+                            .addObject("sidebar", DocumentCache.SIDEBAR)
+                            .addObject("footer", DocumentCache.FOOTER)
+                }
     }
 
     @GetMapping("/github")
