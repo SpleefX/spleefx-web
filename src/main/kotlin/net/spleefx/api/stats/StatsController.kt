@@ -32,7 +32,7 @@ class StatsController {
     private val rateLimit: RequestsLimit = RequestsLimit { RateLimit(5, Duration.ofMinutes(1)) }
 
     @Async
-    @PostMapping("/addstats")
+    @PostMapping("/addstats", produces = ["text/plain"])
     fun createStatsPage(@RequestBody payload: String, servlet: HttpServletRequest): CompletableFuture<ResponseEntity<String>> {
         return rateLimit.consume(requestIP = servlet) {
             GameStats.addGame(payload).thenApply { ResponseEntity.ok(it) }
@@ -53,5 +53,11 @@ class StatsController {
                 ModelAndView("errors/500.html")
             }
         }.toCompletableFuture()
+    }
+
+    @Async
+    @GetMapping("/stats/raw", produces = ["application/json"])
+    fun raw(@RequestParam("game") gameId: String): CompletableFuture<String> {
+        return GameStats.getGame(gameId.toInt()).toCompletableFuture()
     }
 }

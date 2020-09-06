@@ -1,29 +1,47 @@
 package net.spleefx.api.docs
 
-import com.github.benmanes.caffeine.cache.AsyncLoadingCache
-import com.github.benmanes.caffeine.cache.CacheLoader
-import com.github.benmanes.caffeine.cache.Caffeine
 import net.spleefx.api.SpleefXAPI
-import net.spleefx.api.util.LocalFile
-import java.util.concurrent.CompletableFuture
-import java.util.concurrent.TimeUnit
+import net.spleefx.api.util.content
+import net.spleefx.api.util.delete
+import java.io.File
+import java.io.FileFilter
+import java.io.FileNotFoundException
+import java.util.concurrent.ConcurrentHashMap
 
 object DocumentCache {
 
-    var SIDEBAR: String = ""
-    var FOOTER: String = ""
+    internal val pages = ConcurrentHashMap<String, String>()
 
-    private val cache: AsyncLoadingCache<String, String> = Caffeine.newBuilder()
-            .executor(SpleefXAPI.EXECUTOR)
-            .expireAfterAccess(6, TimeUnit.HOURS)
-            .expireAfterWrite(6, TimeUnit.HOURS)
-            .buildAsync(CacheLoader {
-                LocalFile.read("wiki/$it.md")
-            })
-
-    fun readPage(name: String): CompletableFuture<String> {
-        cache.get("_Sidebar").thenAccept { SIDEBAR = it }
-        cache.get("_Footer").thenAccept { FOOTER = it }
-        return cache.get(name.replace(' ', '-'))
+    fun loadAll() {
+        for (file in SpleefXAPI.WIKI.listFiles(FileFilter { it.name.endsWith(".md") })!!) {
+            load(file)
+        }
     }
+
+    fun getPage(name: String): String? {
+        return pages[name]
+    }
+
+    fun search(query: String, titlesOnly: Boolean = false, ignoreCase: Boolean = false): List<String> {
+        val found = ArrayList<String>()
+        for (page in pages) {
+            val search = if (titlesOnly) page.key else page.value
+            if (search.contains(query, ignoreCase))
+                found += page.key
+        }
+        return found
+    }
+
+    fun load(page: File) {
+        try {
+            val name = page.nameWithoutExtension
+            if (name.startsWith("_"))
+                pages[name] = page.content().delete("<br>")
+            else
+                pages[name] = page.content()
+        } catch (ignored: FileNotFoundException) {
+
+        }
+    }
+
 }

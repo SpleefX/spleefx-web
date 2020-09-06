@@ -36,16 +36,15 @@ class RedirectController {
         return createRedirect("https://www.spigotmc.org/resources/73093/")
     }
 
-    @Async
     @GetMapping("/wiki")
-    fun wiki(): CompletableFuture<ModelAndView> {
-        return DocumentCache.readPage("Home")
-                .thenApply {
+    fun wiki(): ModelAndView {
+        return DocumentCache.getPage("Home")
+                .let {
                     ModelAndView("wiki-template.html")
                             .addObject("pageTitle", "Home")
                             .addObject("pageContent", it)
-                            .addObject("sidebar", DocumentCache.SIDEBAR)
-                            .addObject("footer", DocumentCache.FOOTER)
+                            .addObject("sidebar", DocumentCache.getPage("_Sidebar"))
+                            .addObject("footer", DocumentCache.getPage("_Footer"))
                 }
     }
 

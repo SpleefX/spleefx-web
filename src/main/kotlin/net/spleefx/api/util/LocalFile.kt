@@ -16,8 +16,10 @@
 package net.spleefx.api.util
 
 import net.spleefx.api.SpleefXAPI
+import net.spleefx.api.util.LocalFile.fromFile
 import java.io.BufferedReader
 import java.io.File
+import java.io.FileReader
 import java.io.InputStreamReader
 import java.util.*
 
@@ -29,7 +31,7 @@ object LocalFile {
     /**
      * Reads the file with the specified name
      */
-    fun read(name: String): String {
+    fun fromJAR(name: String): String {
         return try {
             val reader = BufferedReader(InputStreamReader(SpleefXAPI::class.java.getResourceAsStream("/${name.replace('/', File.separatorChar)}")!!))
             var line: String?
@@ -43,4 +45,21 @@ object LocalFile {
             "404.html"
         }
     }
+    /**
+     * Reads the file with the specified name
+     */
+    fun fromFile(file: File): String {
+        return try {
+            val reader = BufferedReader(FileReader(file))
+            var line: String?
+            val builder = StringJoiner("\n")
+            while ((reader.readLine().also { line = it }) != null)
+                builder.add(line)
+            builder.toString()
+        } catch (e: Throwable) {
+            e.printStackTrace()
+            "404.html"
+        }
+    }
+
 }

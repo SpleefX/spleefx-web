@@ -15,13 +15,9 @@
  */
 package net.spleefx.api
 
-import com.google.gson.reflect.TypeToken
 import net.moltenjson.utils.ReflectiveTypes
-import net.spleefx.api.util.LocalFile
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
-import java.util.concurrent.TimeUnit
-
 
 /**
  * Controller for responding to version requests
