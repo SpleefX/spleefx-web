@@ -514,3 +514,7 @@ textarea {
     transition: 0.3s;
     color: white;
 }
+
+.page {
+    margin-left: 250px;
+}

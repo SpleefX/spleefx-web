@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit
 object GameStatsFactory {
 
     private val id = IncrementingID("gameStats")
-    val storageFactory = RedisStorageFactory()
+    private val storageFactory = RedisStorageFactory()
 
     fun createGame(payload: String): Int {
         val id = id.nextID

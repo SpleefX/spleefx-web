@@ -15,18 +15,23 @@
  */
 package net.spleefx.api.docs
 
+import net.moltenjson.utils.Gsons
+import org.springframework.scheduling.annotation.Async
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.servlet.ModelAndView
+import java.util.concurrent.CompletableFuture
 
 @RestController
 class DocsController {
 
     @GetMapping("/wiki/search")
     fun search(): ModelAndView {
-        return ModelAndView("search.html").addObject("pagesCount", DocumentCache.pages.size)
+        return ModelAndView("search.html")
+                .addObject("pagesCount", DocumentCache.pages.size)
+                .addObject("sidebar", DocumentCache.getPage("_Sidebar"))
     }
 
     @GetMapping("/wiki/{name}")
@@ -48,10 +53,22 @@ class DocsController {
         }
     }
 
-    @GetMapping(path = ["/search"], produces = ["application/json"])
-    fun search(@RequestParam ignoreCase: Boolean, @RequestParam titleOnly: Boolean, @RequestParam query: String): List<String> {
-        println(query)
-        return listOf("POG")
+    @Async
+    @GetMapping(path = ["/search/raw"], produces = ["application/json"])
+    fun searchRaw(@RequestParam ignoreCase: Boolean, @RequestParam titleOnly: Boolean, @RequestParam query: String): CompletableFuture<Map<String, String>> {
+        return CompletableFuture.completedFuture(DocumentCache.search(query = query, ignoreCase = ignoreCase, titlesOnly = titleOnly))
     }
 
+    @Async
+    @GetMapping(path = ["/search"])
+    fun search(@RequestParam query: String, @RequestParam(defaultValue = "true") ignoreCase: Boolean, @RequestParam(defaultValue = "false") titlesOnly: Boolean): CompletableFuture<ModelAndView> {
+        val results = DocumentCache.search(query = query, ignoreCase = ignoreCase, titlesOnly = titlesOnly)
+        return CompletableFuture.completedFuture(
+                ModelAndView("search_results.html")
+                        .addObject("results", Gsons.DEFAULT.toJson(results))
+                        .addObject("query", query)
+                        .addObject("resultCount", results.size)
+                        .addObject("sidebar", DocumentCache.getPage("_Sidebar"))
+        )
+    }
 }

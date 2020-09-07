@@ -1,6 +1,7 @@
 package net.spleefx.api.stats
 
 import io.lettuce.core.RedisClient
+import io.lettuce.core.api.StatefulRedisConnection
 import net.spleefx.api.SpleefXAPI
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.TimeUnit
@@ -13,7 +14,7 @@ class RedisStorageFactory {
     /**
      * The internal Redis client
      */
-    val redisClient = RedisClient.create("redis://" + SpleefXAPI.CONFIG.getString("redisIP") + "/2").connect()
+    private val redisClient: StatefulRedisConnection<String, String> = RedisClient.create("redis://" + SpleefXAPI.CONFIG.getString("redisIP") + "/2").connect()
 
     /**
      * Updates the specified key -> value asynchronously
@@ -46,4 +47,5 @@ class RedisStorageFactory {
     fun asyncSave() {
         redisClient.async().save()
     }
+
 }
