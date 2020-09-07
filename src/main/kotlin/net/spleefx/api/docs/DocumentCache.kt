@@ -26,6 +26,7 @@ object DocumentCache {
     fun search(query: String, titlesOnly: Boolean = false, ignoreCase: Boolean = true): Map<String, String> {
         val found = LinkedHashMap<String, String>()
         for (page in pages) {
+            if (page.key == "Home" || page.key.startsWith("_")) continue // don't search these pages
             val search = if (titlesOnly) page.key else page.value
             if (search.contains(query, ignoreCase))
                 if (titlesOnly) found[page.key] = page.key
@@ -41,7 +42,6 @@ object DocumentCache {
         var startIndex = queryIndex
         var lastIndex = queryIndex
         var chars = 350
-        println(content.substring(queryIndex))
         for ((index, char) in content.substring(max(queryIndex - 340, 0)).withIndex()) {
             if (char == ' ') {
                 if (lookingForFirstSpace) {

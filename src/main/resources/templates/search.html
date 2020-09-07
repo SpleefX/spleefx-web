@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 	<head>
-		<title>Search | SpleefX Wiki</title>
+		<title>Search | SpleefX </title>
 		<link rel="icon" type="image/x-icon" th:href="@{/img/favicon.ico}"/>
 		<script
 				src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -122,11 +122,21 @@
 		</div>
 		<script th:src="@{/js/sidebar.js}"></script>
 		<script>
+			const examples = ["rewards", "leaderboard", "arena", "spleef"]
+			
+			$("#searchBar").on("keyup", function (event) {
+				if (event.keyCode === 13) {
+					event.preventDefault()
+					$("#submitButton").click()
+				}
+			})
+			
 			$(":checkbox").checkboxpicker().prop("checked", false);
+			document.getElementById("searchBar").placeholder = "Search the wiki, e.g '" + examples[Math.floor(Math.random() * examples.length)] + "'"
 			
 			function search() {
-				let query = $("#seachBar").val()
-				if (!query) {
+				const query = document.getElementById("searchBar").value
+				if (query.length === 0) {
 					alert("You must specify a search query!")
 					return false
 				}

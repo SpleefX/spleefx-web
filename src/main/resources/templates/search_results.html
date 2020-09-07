@@ -60,7 +60,7 @@
 					const h1 = document.createElement("h2")
 					const anchor = document.createElement("a")
 					anchor.href = "/wiki/" + nameWithDashes
-					anchor.innerHTML = nameWithDashes.replace("-", " ")
+					anchor.innerHTML = nameWithDashes.replaceAll("-", " ")
 					h1.className = "result"
 					h1.appendChild(anchor)
 					page.appendChild(h1)
