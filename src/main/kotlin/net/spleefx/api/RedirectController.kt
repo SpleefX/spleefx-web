@@ -15,7 +15,6 @@
  */
 package net.spleefx.api
 
-import net.spleefx.api.docs.DocumentCache
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.servlet.ModelAndView
@@ -36,14 +35,7 @@ class RedirectController {
 
     @GetMapping("/wiki")
     fun wiki(): ModelAndView {
-        return DocumentCache.getPage("Home")
-                .let {
-                    ModelAndView("wiki-template.html")
-                            .addObject("pageTitle", "Home")
-                            .addObject("pageContent", it)
-                            .addObject("sidebar", DocumentCache.getPage("_Sidebar"))
-                            .addObject("footer", DocumentCache.getPage("_Footer"))
-                }
+        return createRedirect("/wiki/Home")
     }
 
     @GetMapping("/github")
