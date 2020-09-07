@@ -108,9 +108,9 @@ class SpleefXAPI {
          */
         @JvmStatic
         fun main(args: Array<String>) {
+            DocumentCache.loadAll()
             SpringApplication.run(SpleefXAPI::class.java, *args)
             IncrementingID.schedule()
-            DocumentCache.loadAll()
             WikiFileWatcher().watch()
         }
 

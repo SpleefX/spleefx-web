@@ -36,7 +36,14 @@ class RedirectController {
 
     @GetMapping("/wiki")
     fun wiki(): ModelAndView {
-        return createRedirect("/wiki/Home")
+        return DocumentCache.getPage("Home")
+                .let {
+                    ModelAndView("wiki-template.html")
+                            .addObject("pageTitle", "Home")
+                            .addObject("pageContent", it)
+                            .addObject("sidebar", DocumentCache.getPage("_Sidebar"))
+                            .addObject("footer", DocumentCache.getPage("_Footer"))
+                }
     }
 
     @GetMapping("/github")
