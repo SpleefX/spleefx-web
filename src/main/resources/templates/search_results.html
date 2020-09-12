@@ -44,8 +44,10 @@
 			if (Object.keys(results).length === 0) {
 				const child = document.createElement("h1")
 				child.innerHTML = "I couldn't find anything matching '" + document.getElementById("_query").innerHTML + "'. :("
+				child.id = "count"
 				child.className = "result"
 				page.appendChild(child)
+				addSearchAgain()
 			} else {
 				const header = document.createElement("h1")
 				header.className = "result"
@@ -66,21 +68,25 @@
 					p.className = "result"
 					page.appendChild(p)
 				}
-				const searchAgain = document.createElement("h3")
-				
-				searchAgain.className = "result"
-				
-				const anchor = document.createElement("a")
-				anchor.href = "/wiki/search"
-				anchor.innerHTML = "Search again?"
-				searchAgain.appendChild(anchor)
-				page.appendChild(searchAgain)
+				addSearchAgain()
 				
 				const allAnchors = sidebar.getElementsByTagName("a")
 				for (let i = 0; i < allAnchors.length; i++) {
 					const an = allAnchors[i]
 					an.href = an.href.replace(window.location.host, window.location.host + "/wiki")
 				}
+			}
+			
+			function addSearchAgain() {
+				const searchAgain = document.createElement("h3")
+				
+				searchAgain.className = "result"
+				
+				const searchAgainAnchor = document.createElement("a")
+				searchAgainAnchor.href = "/wiki/search"
+				searchAgainAnchor.innerHTML = "Search again?"
+				searchAgain.appendChild(searchAgainAnchor)
+				page.appendChild(searchAgain)
 			}
 		</script>
 	</body>

@@ -318,7 +318,7 @@ blockquote {
 }
 
 code {
-    font-family: Consolas, sans-serif;
+    font-family: monospace, sans-serif;
     background-color: rgba(0, 0, 0, 0.05);
     border-radius: 3px;
     padding: 2px 4px;

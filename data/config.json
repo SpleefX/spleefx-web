@@ -2,6 +2,7 @@
   "redisIP": "redis",
   "versions": [
     "4.0.0-SNAPSHOT",
+    "3.9-BETA",
     "3.8.8-SNAPSHOT",
     "3.8.7-BETA",
     "3.8.5-BETA",
