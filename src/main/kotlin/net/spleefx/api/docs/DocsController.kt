@@ -55,7 +55,7 @@ class DocsController {
 
     @Async
     @GetMapping(path = ["/search/raw"], produces = ["application/json"])
-    fun searchRaw(@RequestParam ignoreCase: Boolean, @RequestParam titleOnly: Boolean, @RequestParam query: String): CompletableFuture<Map<String, String>> {
+    fun searchRaw(@RequestParam(defaultValue = "true") ignoreCase: Boolean, @RequestParam(defaultValue = "false") titleOnly: Boolean, @RequestParam query: String): CompletableFuture<Map<String, String>> {
         return CompletableFuture.completedFuture(DocumentCache.search(query = query, ignoreCase = ignoreCase, titlesOnly = titleOnly))
     }
 

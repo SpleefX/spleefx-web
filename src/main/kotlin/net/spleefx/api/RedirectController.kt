@@ -16,6 +16,7 @@
 package net.spleefx.api
 
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.servlet.ModelAndView
 
@@ -23,14 +24,24 @@ import org.springframework.web.servlet.ModelAndView
 @RestController
 class RedirectController {
 
-    @GetMapping(value = ["/discord"])
+    @GetMapping("/discord")
     fun discord(): ModelAndView {
         return createRedirect("https://discord.gg/uwf72ZN")
     }
 
-    @GetMapping(value = ["/spigot"])
+    @GetMapping("/spigot")
     fun spigot(): ModelAndView {
         return createRedirect("https://www.spigotmc.org/resources/73093/")
+    }
+
+    @GetMapping("/update/{updateID}")
+    fun update(@PathVariable updateID: String): ModelAndView {
+        return createRedirect("https://www.spigotmc.org/resources/73093/update?update=$updateID")
+    }
+
+    @GetMapping("/updates")
+    fun updates(): ModelAndView {
+        return createRedirect("https://www.spigotmc.org/resources/73093/updates")
     }
 
     @GetMapping("/wiki")
