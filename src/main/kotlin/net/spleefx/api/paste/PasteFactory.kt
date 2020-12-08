@@ -4,6 +4,8 @@ import com.github.benmanes.caffeine.cache.AsyncLoadingCache
 import com.github.benmanes.caffeine.cache.CacheLoader
 import com.github.benmanes.caffeine.cache.Caffeine
 import net.spleefx.api.SpleefXAPI
+import net.spleefx.api.util.createGZIP
+import net.spleefx.api.util.readGZIP
 import java.io.File
 import java.security.SecureRandom
 import java.util.*
@@ -35,7 +37,7 @@ object PasteFactory {
             .executor(SpleefXAPI.EXECUTOR)
             .buildAsync(CacheLoader {
                 try {
-                    PasteCompressor.readGZIP(File(SpleefXAPI.DIR, "$it.gzip"))
+                    File(SpleefXAPI.DIR, "$it.gzip").readGZIP()
                 } catch (e: InvalidPasteException) {
                     "Invalid paste: $it"
                 }
@@ -52,7 +54,7 @@ object PasteFactory {
         SpleefXAPI.runAsync {
             val id = generatePasteID()
             val file = File(SpleefXAPI.DIR, "$id.gzip")
-            PasteCompressor.createGZIP(text, file)
+            text.createGZIP(file)
             future.complete(id)
         }
         return future

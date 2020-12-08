@@ -23,9 +23,8 @@ import java.nio.file.StandardWatchEventKinds.*
 import java.nio.file.WatchEvent
 import java.nio.file.WatchKey
 
-
 @Suppress("UNCHECKED_CAST")
-class WikiFileWatcher {
+object WikiFileWatcher {
 
     private val directory = SpleefXAPI.WIKI.toPath()
     private val watcher = FileSystems.getDefault().newWatchService()

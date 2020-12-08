@@ -24,10 +24,14 @@ import java.util.concurrent.TimeUnit
 
 open class RedisAccessor(databaseIndex: Int) {
 
+    protected val whitespace = Regex.fromLiteral("\\s")
+
     /**
      * The internal Redis client
      */
-    val redisClient: StatefulRedisConnection<String, String>
+    val redisClient: StatefulRedisConnection<String, String> = RedisClient
+            .create("redis://${SpleefXAPI.CONFIG.getString("redisIP")}/$databaseIndex")
+            .connect()
 
     inline fun <R> async(block: RedisAsyncCommands<String, String>.() -> R): R {
         return redisClient.async().block()
@@ -40,7 +44,6 @@ open class RedisAccessor(databaseIndex: Int) {
     fun save(): Unit = sync { save() }
 
     init {
-        redisClient = RedisClient.create("redis://" + SpleefXAPI.CONFIG.getString("redisIP") + "/$databaseIndex").connect()
         println("Established connection to Redis #$databaseIndex.")
         SpleefXAPI.scheduleAsync(1, 1, TimeUnit.HOURS) {
             async { save() }

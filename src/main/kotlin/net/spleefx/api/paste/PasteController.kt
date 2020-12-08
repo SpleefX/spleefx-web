@@ -39,7 +39,7 @@ import javax.servlet.http.HttpServletRequest
 class PasteController {
 
     // 5 requests per minute per IP
-    private val ratelimit = RequestsLimit { RateLimit(capacity = 5, every = Duration.ofMinutes(1)) }
+    private val ratelimit = RequestsLimit { RateLimit(allows = 5, every = Duration.ofMinutes(1)) }
 
     /**
      * Returns the static HTML page for creating a paste
@@ -56,9 +56,12 @@ class PasteController {
     @PostMapping(value = ["/paste"], consumes = ["application/json"], produces = ["application/json"])
     fun createPaste(@RequestBody paste: PasteBody, servlet: HttpServletRequest): CompletableFuture<ResponseEntity<String>> {
         return ratelimit.consume(1, servlet) {
-            PasteFactory.createPaste(paste.paste).thenApply { PasteResponse(it) }.thenApply { p ->
-                return@thenApply ResponseEntity(SpleefXAPI.MAPPER.writeValueAsString(p), HttpStatus.OK)
-            }
+            PasteFactory
+                    .createPaste(paste.paste)
+                    .thenApply { PasteResponse(it) }
+                    .thenApply { p ->
+                        ResponseEntity(SpleefXAPI.MAPPER.writeValueAsString(p), HttpStatus.OK)
+                    }
         }
     }
 

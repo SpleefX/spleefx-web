@@ -5,6 +5,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import net.moltenjson.configuration.direct.DirectConfiguration
 import net.moltenjson.json.JsonFile
+import net.spleefx.api.debug.DebugRedisAccessor
 import net.spleefx.api.docs.DocumentCache
 import net.spleefx.api.docs.WikiFileWatcher
 import net.spleefx.api.util.IncrementingID
@@ -109,9 +110,10 @@ class SpleefXAPI {
         @JvmStatic
         fun main(args: Array<String>) {
             DocumentCache.loadAll()
-            SpringApplication.run(SpleefXAPI::class.java, *args)
             IncrementingID.schedule()
-            WikiFileWatcher().watch()
+            DebugRedisAccessor.schedule()
+            WikiFileWatcher.watch()
+            SpringApplication.run(SpleefXAPI::class.java, *args)
         }
 
         /**

@@ -30,12 +30,12 @@ import java.util.concurrent.TimeUnit
  *
  * See [https://en.wikipedia.org/wiki/Token_bucket]
  */
-class RateLimit(capacity: Long, every: Duration) {
+class RateLimit(allows: Long, every: Duration) {
 
     /**
      * The inner bucket
      */
-    private val bucket: Bucket = Bucket4j.builder().addLimit(Bandwidth.classic(capacity, Refill.intervally(capacity, every))).build()
+    private val bucket: Bucket = Bucket4j.builder().addLimit(Bandwidth.classic(allows, Refill.intervally(allows, every))).build()
 
     /**
      * Attempts to consume 1 token from the bucket, otherwise returns a [ResponseEntity] with a status code

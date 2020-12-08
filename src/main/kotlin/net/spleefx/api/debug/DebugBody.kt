@@ -1,5 +1,5 @@
 /*
- * * Copyright 2019-2020 github.com/ReflxctionDev
+ * * Copyright 2020 github.com/ReflxctionDev
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,24 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.spleefx.api
+package net.spleefx.api.debug
 
-import net.spleefx.api.debug.DebugRedisAccessor
-import net.spleefx.api.stats.GameStatsFactory
-import net.spleefx.api.util.IncrementingID
-import org.springframework.stereotype.Component
-import javax.annotation.PreDestroy
-
-@Component
-class ShutdownHooks {
-
-    @PreDestroy
-    fun saveIDs() = IncrementingID.config.save(Throwable::printStackTrace)
-
-    @PreDestroy
-    fun saveGameStats() = GameStatsFactory.save()
-
-    @PreDestroy
-    fun saveDebugReports() = DebugRedisAccessor.save()
-
-}
+class DebugBody(val json: String = "")
