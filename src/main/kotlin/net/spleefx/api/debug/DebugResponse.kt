@@ -1,3 +1,3 @@
 package net.spleefx.api.debug
 
-class DebugResponse(val key: String)
+class DebugResponse(val id: String)
