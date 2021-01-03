@@ -8,11 +8,11 @@ rules[1].style.backgroundImage = "url('" + json.bg + "')";
 function getVictoryState(token) {
     switch (token) {
         case "$WIN":
-            return {html: "VICTORY", color: "rgb(0, 200, 0)"}
+            return {html: json.victory || "VICTORY", color: "rgb(0, 200, 0)"}
         case "$LOSS":
-            return {html: "ELIMINATED", color: "rgb(200, 10, 10)"}
+            return {html: json.eliminated || "ELIMINATED", color: "rgb(200, 10, 10)"}
         case "$CARRY":
-            return {html: "CARRIED", color: "rgb(255,141,2)"}
+            return {html: json.carried || "CARRIED", color: "rgb(255,141,2)"}
         default:
             return {html: token, color: "#808080"}
     }
